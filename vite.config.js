@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import svgLoader from 'vite-svg-loader'
 
 const viteEnv = {}
 Object.keys(process.env).forEach((key) => {
@@ -10,7 +11,7 @@ Object.keys(process.env).forEach((key) => {
 
 module.exports = defineConfig({
   outDir: 'out',
-  plugins: [vue()],
+  plugins: [vue(), svgLoader()],
   define: viteEnv,
   optimizeDeps: {
     include: ['@apollo/client/core'],

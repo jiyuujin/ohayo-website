@@ -1,0 +1,48 @@
+.modal-mask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal-container {
+  z-index: 10001;
+  overflow-y: scroll;
+  background-color: #e6f2ff;
+  color: #000;
+  height: auto;
+  min-height: 64px;
+  max-height: 480px;
+  padding: 64px 32px;
+  border-radius: 6px;
+}
+
+.modal-container .body {
+  text-align: left;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.modal-container .footer-area {
+  padding: 8px 0;
+  margin: 2px;
+  text-align: left;
+}
+
+.modal-container .footer-area a {
+  color: #303030;
+}
+
+.modal-container .footer-area span {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 16px;
+  margin-left: 4px;
+}
