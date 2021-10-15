@@ -1,0 +1,27 @@
+.issues {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 1.25rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0 7px;
+  margin-right: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #2c2e2f;
+  background-color: transparent;
+  border: 1px solid #30363d;
+  border-radius: 2em;
+}
+
+.tag a {
+  color: #2c2e2f;
+  text-decoration: none;
+}

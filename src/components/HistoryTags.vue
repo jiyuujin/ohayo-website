@@ -1,19 +1,21 @@
 <template>
   <div class="issues">
-    <h3 id="#tags">Tags</h3>
-    <div
+    <h3 id="#tags">
+      Tags
+    </h3>
+    <span
       v-for="(label, index) in Object.keys(counts)"
       :key="index"
-      class="issue"
     >
       <a
         :href="`https://github.com/jiyuujin/dailyradar/labels/${label}`"
         target="_blank"
         rel="noopener noreferrer"
+        class="tag"
       >
         {{ `${label} (${counts[label]})` }}
       </a>
-    </div>
+    </span>
   </div>
 </template>
 
@@ -44,3 +46,16 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media (prefers-color-scheme: dark) {
+  .tag {
+    color: #fefefe;
+    border: 1px solid #dedede;
+  }
+
+  .tag a {
+    color: #fefefe;
+  }
+}
+</style>
