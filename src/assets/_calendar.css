@@ -1,0 +1,123 @@
+.calendar {
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: repeat(7, minmax(20px, 1fr));
+  grid-auto-rows: 120px;
+  width: 100%;
+  overflow: auto;
+  border-left: 1px solid rgba(166, 168, 179, 0.12);
+}
+
+.weekday {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 50px;
+  color: #99a1a7;
+  text-align: center;
+  text-transform: uppercase;
+  border-right: 1px solid rgba(166, 168, 179, 0.12);
+  border-bottom: 1px solid rgba(166, 168, 179, 0.12);
+}
+
+.day {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 20px;
+  font-size: 14px;
+  color: #98a0a6;
+  text-align: center;
+  letter-spacing: 1px;
+  vertical-align: middle;
+  border-right: 1px solid rgba(166, 168, 179, 0.12);
+  border-bottom: 1px solid rgba(166, 168, 179, 0.12);
+}
+
+.date {
+  width: 100%;
+}
+
+img {
+  width: 40px;
+  border-radius: 40px;
+}
+
+.day--existed {
+  opacity: 1;
+}
+
+.day--not-existed {
+  opacity: 0.4;
+}
+
+.day--disabled {
+  cursor: not-allowed;
+}
+
+.tooltip {
+  position: absolute;
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 120px;
+  max-width: 100%;
+  padding: 7px 10px;
+  margin: 1.5em 0;
+  font-size: 16px;
+  color: #555;
+  background: #fff;
+  border: solid 3px #555;
+  opacity: 0;
+}
+
+.tooltip::before {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  z-index: 1000;
+  margin-left: -15px;
+  content: '';
+  border: 12px solid transparent;
+  border-top: 12px solid #fff;
+}
+
+.tooltip::after {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  z-index: 1000;
+  margin-left: -17px;
+  content: '';
+  border: 14px solid transparent;
+  border-top: 14px solid #555;
+}
+
+.day:hover > .tooltip,
+.day:focus > .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .calendar {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .weekday {
+    display: none;
+  }
+
+  .day {
+    width: 100%;
+  }
+
+  .day--disabled {
+    display: none;
+  }
+}

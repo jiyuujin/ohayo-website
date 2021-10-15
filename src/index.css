@@ -1,8 +1,20 @@
+@import 'assets/_calendar.css';
+@import 'assets/_history-tags.css';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+h2,
+h3 {
+  width: 100%;
 }
