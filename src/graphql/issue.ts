@@ -25,6 +25,14 @@ export const searchQuery = gql`
                 name
               }
             }
+            timelineItems(first: 10) {
+              nodes {
+                ... on IssueComment {
+                  id
+                  body
+                }
+              }
+            }
           }
         }
       }

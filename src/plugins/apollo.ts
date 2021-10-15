@@ -2,10 +2,13 @@ import ApolloClient from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { ApolloLink, concat } from 'apollo-link'
 import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory'
+import introspectionQueryResultData from './fragmentTypes.json'
 
 const GITHUB_API_V4 = 'https://api.github.com/graphql'
 
-const fragmentMatcher = new IntrospectionFragmentMatcher()
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData
+})
 
 const authMiddleware = new ApolloLink((operation, forward) => {
   operation.setContext({
