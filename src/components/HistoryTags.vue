@@ -8,7 +8,7 @@
       :key="index"
     >
       <a
-        :href="`https://github.com/jiyuujin/dailyradar/labels/${label}`"
+        :href="`https://github.com/jiyuujin/ohayo-developers/labels/${label}`"
         target="_blank"
         rel="noopener noreferrer"
         class="tag"
