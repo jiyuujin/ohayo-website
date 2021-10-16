@@ -1,6 +1,5 @@
 <template>
-  <main>
-    <h1>Spaces in Routine</h1>
+  <div>
     <section v-if="loading">
       {{ `Loading...` }}
     </section>
@@ -8,7 +7,7 @@
       <calendar :items="issues" />
       <history-tags :items="issues" />
     </section>
-  </main>
+  </div>
 </template>
 
 <script lang="ts">
