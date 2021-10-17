@@ -46,3 +46,18 @@
   font-size: 16px;
   margin-left: 4px;
 }
+
+.contributor {
+  text-align: right;
+  padding: 4px 0;
+  margin-left: -12px;
+  font-size: 16px;
+}
+
+.participant_wrapper a {
+  margin: 0 4px;
+}
+
+.participant_wrapper img {
+  width: 32px;
+}
