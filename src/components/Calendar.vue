@@ -25,10 +25,10 @@
             {{ getPost(day).title }}
           </a>
         </div>
-        -->
         <div class="date">
           {{ day }}
         </div>
+        -->
         <div v-if="getPost(day)">
           <a
             role="button"
@@ -37,11 +37,14 @@
             rel="noopener noreferrer"
             @click="openModal(day)"
           >
-            <img
-              :alt="getPost(day).title"
-              src="/icon/bakeneko2.png"
-              class="day--existed"
-            />
+            <div v-if="getPost(day).participants?.nodes.length === 1" class="participant_wrapper">
+              <img :alt="getPost(day).participants?.nodes[0].name" :src="getPost(day).participants?.nodes[0].avatarUrl" />
+            </div>
+            <div v-else>
+              <span v-for="participant in getPost(day).participants?.nodes" :key="participant.id" class="participant_wrapper">
+                <img :alt="participant.name" :src="participant.avatarUrl" />
+              </span>
+            </div>
             <!--
             <span class="tooltip">
               {{ getPost(day).title }}
@@ -50,11 +53,16 @@
           </a>
         </div>
         <div v-else>
+          <div class="date">
+            {{ day }}
+          </div>
+          <!--
           <img
             :alt="getPost(day) ? getPost(day).title : ''"
             src="/icon/bakeneko2.png"
             class="day--not-existed"
           />
+          -->
         </div>
       </div>
       <div v-for="i in endOfMonth" :key="i" class="day day--disabled" />
@@ -70,11 +78,19 @@
                 {{ label.name }}
               </span>
             </h3>
+            <div class="contributor">
+              Contributor
+              <span v-for="participant in currentArticle.participants.nodes" :key="participant.id" class="participant_wrapper">
+                <a :href="`https://github.com/${participant.login}`" target="_blank" rel="noopener noreferrer">
+                  <img :alt="participant.name" :src="participant.avatarUrl" />
+                </a>
+              </span>
+            </div>
             <div class="body" v-html="currentBody" />
             <div class="footer-area">
               <a :href="currentArticle.url" target="_blank" rel="noopener noreferrer">
                 <GithubSvg />
-                <span>Githubで編集を提案</span>
+                <span class="editing_label">Githubで編集を提案</span>
               </a>
             </div>
           </div>

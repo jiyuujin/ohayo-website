@@ -33,6 +33,14 @@ export const searchQuery = gql`
                 }
               }
             }
+            participants(last: 10) {
+              nodes {
+                id
+                login
+                name
+                avatarUrl(size: 40)
+              }
+            }
           }
         }
       }
