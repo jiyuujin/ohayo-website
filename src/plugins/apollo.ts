@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch'
 import ApolloClient from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { ApolloLink, concat } from 'apollo-link'

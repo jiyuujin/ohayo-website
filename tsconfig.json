@@ -7,7 +7,12 @@
     "strict": true,
     "declaration": true,
     "noUnusedLocals": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": [
+      "vite/client",
+      "vite-plugin-pages/client",
+      "vite-plugin-vue-layouts/client"
+    ]
   },
   "include": [
     "./**/*.vue",
