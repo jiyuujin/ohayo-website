@@ -5,6 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "build:ssg": "vite-ssg build",
+    "build:og-gen": "ts-node --project tsconfig.builder.json scripts/og-gen.ts",
     "lint": "eslint ./ --ext ts,vue",
     "lint:fix": "eslint ./ --ext ts,vue --fix",
     "test": "jest",
@@ -24,6 +25,7 @@
     "dayjs": "^1.10.7",
     "graphql": "^15.5.0",
     "graphql-tag": "^2.11.0",
+    "ts-node": "^10.4.0",
     "vue": "^3.1.1",
     "vue-router": "^4.0.12"
   },
@@ -43,6 +45,7 @@
     "isomorphic-unfetch": "^3.1.0",
     "jest": "^26.4.2",
     "marked": "^3.0.7",
+    "puppeteer": "^10.4.0",
     "ts-jest": "^26.4.1",
     "typescript": "^3.9.7",
     "unplugin-auto-import": "^0.4.13",
