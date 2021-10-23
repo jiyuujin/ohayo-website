@@ -18,5 +18,6 @@
     "./**/*.vue",
     "./**/*.ts",
     "./**/*.tsx"
-  ]
+  ],
+  "exclude": ["node_modules", "scripts/og-gen.ts"]
 }
