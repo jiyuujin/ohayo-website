@@ -1,4 +1,7 @@
 import { defineConfig } from 'vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Pages from 'vite-plugin-pages'
+import Layouts from 'vite-plugin-vue-layouts'
 import vue from '@vitejs/plugin-vue'
 import svgLoader from 'vite-svg-loader'
 
@@ -11,10 +14,30 @@ Object.keys(process.env).forEach((key) => {
 
 module.exports = defineConfig({
   outDir: 'out',
-  plugins: [vue(), svgLoader()],
+  plugins: [
+    AutoImport({
+      imports: ['vue', 'vue-router', '@vueuse/head', '@vueuse/core'],
+      dts: 'src/auto-imports.d.ts'
+    }),
+    Pages({
+      extensions: ['vue'],
+    }),
+    Layouts(),
+    vue(),
+    svgLoader()
+  ],
   define: viteEnv,
+  server: {
+    fs: {
+      strict: true
+    }
+  },
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
+  },
   optimizeDeps: {
-    include: ['@apollo/client/core'],
+    include: ['vue', 'vue-router', '@vueuse/core', '@vueuse/head', '@apollo/client/core'],
     exclude: ['@apollo/client']
   }
 })

@@ -7,16 +7,15 @@
   </main>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import Issues from './components/Issues.vue'
 import FooterText from './components/FooterText.vue'
 import Alert from './components/Alert.vue'
 
-export default {
-  components: {
-    Issues,
-    FooterText,
-    Alert
-  }
-}
+useHead({
+  title: 'Vitesse',
+  meta: [
+    { name: 'description', content: 'Opinionated Vite Starter Template' },
+  ],
+})
 </script>
