@@ -262,8 +262,10 @@ export default {
     const getPost = (day: number) => {
       let post: any | null | undefined
       props.items?.map((item: any) => {
-        if (day === Number(dayjs(item.createdAt).format('DD'))) {
-          post = item
+        if (ym.value === dayjs(item.createdAt).format('YYYY-MM')) {
+          if (Number(dayjs(`${ym.value}-${day}`).format('DD')) === Number(dayjs(item.createdAt).format('DD'))) {
+            post = item
+          }
         }
       })
       return post
