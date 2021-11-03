@@ -30,7 +30,7 @@
         </div>
         -->
         <div v-if="getPost(day)">
-          <router-link :to="`/posts/${getPost(day).id}`">
+          <router-link :to="`/posts/${currentDateText(getPost(day).createdAt)}`">
             <div v-if="getPost(day).participants?.nodes.length === 1" class="participant_wrapper">
               <img :alt="getPost(day).participants?.nodes[0].name" :src="getPost(day).participants?.nodes[0].avatarUrl" />
             </div>
@@ -67,6 +67,7 @@
 <script lang="ts">
 import { ref, computed } from 'vue'
 import dayjs from 'dayjs'
+import { zeroPadding } from '../services/utilService'
 
 type CalendarProps = {
   items?: Array<unknown>
@@ -161,6 +162,11 @@ export default {
       return null
     })
 
+    const currentDateText = (d: string) => {
+      const target = new Date(d)
+      return target.getFullYear() + '-' + zeroPadding(target.getMonth() + 1) + '-' + zeroPadding(target.getDay())
+    }
+
     /**
      * 現在の日付を取得する
      * @param formatType
@@ -201,6 +207,7 @@ export default {
       formatYM,
       startOfMonth,
       endOfMonth,
+      currentDateText,
       formatCurrentDate,
       formatPreviousDate,
       currentDate,

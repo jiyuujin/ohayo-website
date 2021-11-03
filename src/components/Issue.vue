@@ -46,7 +46,7 @@ export default {
     GithubSvg
   },
   props: {
-    id: {
+    date: {
       type: String,
       default: ''
     }
@@ -61,7 +61,10 @@ export default {
 
     const currentArticle = computed(() => {
       return issues.value.filter((item: any) => {
-        if (item.id === props.id) {
+        if (
+          String(dayjs(item.createdAt).format('YYYY')) === String(new Date(props.date).getFullYear()) &&
+          String(dayjs(item.createdAt).format('MM')) === String(new Date(props.date).getMonth() + 1) &&
+          String(dayjs(item.createdAt).format('D')) === String(new Date(props.date).getDate())) {
           return item
         }
       })[0]
@@ -69,7 +72,14 @@ export default {
 
     const currentBody = computed(() => {
       let body = ''
-      issues.value.filter((item) => item.id === props.id)[0].timelineItems.nodes?.forEach((item) => {
+      issues.value.filter((item) => {
+        if (
+          String(dayjs(item.createdAt).format('YYYY')) === String(new Date(props.date).getFullYear()) &&
+          String(dayjs(item.createdAt).format('MM')) === String(new Date(props.date).getMonth() + 1) &&
+          String(dayjs(item.createdAt).format('D')) === String(new Date(props.date).getDate())) {
+          return item
+        }
+      })[0].timelineItems.nodes?.forEach((item) => {
         if (item.hasOwnProperty('body')) {
           body += `${item.body}\n\n`
         }

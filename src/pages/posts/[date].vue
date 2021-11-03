@@ -3,14 +3,14 @@ import Issue from '../../components/Issue.vue'
 import FooterText from '../../components/FooterText.vue'
 import Alert from '../../components/Alert.vue'
 
-const props = defineProps<{ id: string }>()
-const postId = computed(() => props.id)
+const props = defineProps<{ date: string }>()
+const postDate = computed(() => props.date)
 </script>
 
 <template>
   <main>
     <alert />
-    <issue :id="postId" />
+    <issue :date="postDate" />
     <footer-text />
   </main>
 </template>
