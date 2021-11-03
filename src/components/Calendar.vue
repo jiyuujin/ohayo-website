@@ -67,7 +67,7 @@
 <script lang="ts">
 import { ref, computed } from 'vue'
 import dayjs from 'dayjs'
-import { zeroPadding } from '../services/utilService'
+import { currentDateText } from '../services/utilService'
 
 type CalendarProps = {
   items?: Array<unknown>
@@ -161,11 +161,6 @@ export default {
       }
       return null
     })
-
-    const currentDateText = (d: string) => {
-      const target = new Date(d)
-      return target.getFullYear() + '-' + zeroPadding(target.getMonth() + 1) + '-' + zeroPadding(target.getDay())
-    }
 
     /**
      * 現在の日付を取得する
