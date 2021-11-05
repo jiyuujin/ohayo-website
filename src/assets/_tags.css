@@ -25,3 +25,14 @@
   color: #2c2e2f;
   text-decoration: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  .tag {
+    color: #fefefe;
+    border: 1px solid #dedede;
+  }
+
+  .tag a {
+    color: #fefefe;
+  }
+}
