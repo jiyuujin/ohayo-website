@@ -22,6 +22,26 @@
   border-left: solid 5px #35495e;
 }
 
+.article-container .body table {
+  margin: 10px 0 15px 0;
+  border-collapse: collapse;
+}
+
+.article-container .body td,
+.article-container .body th {
+  padding: 3px 10px;
+  border: 2px solid #ccb8a3;
+}
+
+.article-container .body th {
+  padding: 5px 10px;
+}
+
+.article-container .body img {
+  width: 100%;
+  border-radius: 0;
+}
+
 .article-container .footer-area {
   padding: 8px 0;
   margin: 2px;
