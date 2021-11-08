@@ -58,7 +58,7 @@ export const sortCounts = (items: CountsType) => {
 
 export const currentDateText = (d: string) => {
   const target = new Date(d)
-  return target.getFullYear() + '-' + zeroPadding(target.getMonth() + 1) + '-' + zeroPadding(target.getDay())
+  return target.getFullYear() + '-' + zeroPadding(target.getMonth() + 1) + '-' + zeroPadding(target.getDate())
 }
 
 export const zeroPadding = (target: number): string => {
