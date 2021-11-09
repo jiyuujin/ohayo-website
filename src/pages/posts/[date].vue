@@ -10,15 +10,15 @@ const postDate = computed(() => props.date)
 const postDateText = computed(() => currentDateText(props.date))
 
 useHead({
-  title: `おはようエンジニア in ${postDateText}`,
+  title: `おはようエンジニア in ${postDateText.value}`,
   meta: [
     {
       name: 'description',
-      content: `${postDateText} に Twitter Spaces でお喋りした内容のメモを記録しています。`
+      content: `${postDateText.value} に Twitter Spaces でお喋りした内容のメモを記録しています。`
     },
     {
       name: 'og:site_name',
-      content: `おはようエンジニア in ${postDateText}`
+      content: `おはようエンジニア in ${postDateText.value}`
     },
     {
       name: 'og:type',
@@ -26,11 +26,11 @@ useHead({
     },
     {
       name: 'og:description',
-      content: `${postDateText} に Twitter Spaces でお喋りした内容のメモを記録しています。`
+      content: `${postDateText.value} に Twitter Spaces でお喋りした内容のメモを記録しています。`
     },
     {
       name: 'og:title',
-      content: `おはようエンジニア in ${postDateText}`
+      content: `おはようエンジニア in ${postDateText.value}`
     },
     {
       name: 'og:url',
@@ -38,11 +38,11 @@ useHead({
     },
     {
       name: 'twitter:description',
-      content: `${postDateText} に Twitter Spaces でお喋りした内容のメモを記録しています。`
+      content: `${postDateText.value} に Twitter Spaces でお喋りした内容のメモを記録しています。`
     },
     {
       name: 'twitter:title',
-      content: `おはようエンジニア in ${postDateText}`
+      content: `おはようエンジニア in ${postDateText.value}`
     },
     {
       name: 'twitter:card',
