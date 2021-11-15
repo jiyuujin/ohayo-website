@@ -37,6 +37,20 @@
   padding: 5px 10px;
 }
 
+.article-container .body code {
+  background-color: #7f828b;
+}
+
+.article-container .body pre {
+  padding: 1.2rem .8rem;
+  overflow-x: scroll;
+  text-align: left;
+}
+
+.article-container .body pre code {
+  background: transparent;
+}
+
 .article-container .body img {
   width: 100%;
   border-radius: 0;
