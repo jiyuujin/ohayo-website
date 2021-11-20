@@ -90,5 +90,8 @@
     "transformIgnorePatterns": [
       "node_modules"
     ]
+  },
+  "engines": {
+    "node": ">=12"
   }
 }
