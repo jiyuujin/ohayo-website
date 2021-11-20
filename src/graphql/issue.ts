@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-export const searchQuery = gql`
+export const searchQuery = (tag?: string) => gql`
   query {
     viewer {
       login
@@ -11,6 +11,7 @@ export const searchQuery = gql`
         issues(
           last: 100
           orderBy: { field: CREATED_AT, direction: DESC }
+          ${tag ? `labels: "${tag}"` : ''}
         ) {
           nodes {
             id
