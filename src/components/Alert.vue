@@ -5,14 +5,24 @@
     <p>
       ウェブサイト:
       <wbr />
-      <a href="https://github.com/jiyuujin/ohayo-website" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://github.com/jiyuujin/ohayo-website"
+        title="jiyuujin/ohayo-websiteリポジトリを見る"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         https://github.com/jiyuujin/ohayo-website
       </a>
     </p>
     <p>
       ドキュメント:
       <wbr />
-      <a href="https://github.com/jiyuujin/ohayo-developers" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://github.com/jiyuujin/ohayo-developers"
+        title="jiyuujin/ohayo-developersリポジトリを見る"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         https://github.com/jiyuujin/ohayo-developers
       </a>
     </p>
