@@ -30,7 +30,10 @@
         </div>
         -->
         <div v-if="getPost(day)">
-          <router-link :to="`/posts/${currentDateText(getPost(day).createdAt)}`">
+          <router-link
+            :to="`/posts/${currentDateText(getPost(day).createdAt)}`"
+            :title="`${getPost(day).title}を見る`"
+          >
             <div v-if="getPost(day).participants?.nodes.length === 1" class="participant_wrapper">
               <img :alt="getPost(day).participants?.nodes[0].name" :src="getPost(day).participants?.nodes[0].avatarUrl" />
             </div>

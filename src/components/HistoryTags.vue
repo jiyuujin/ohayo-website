@@ -9,6 +9,7 @@
     >
       <a
         :href="`https://github.com/jiyuujin/ohayo-developers/labels/${label}`"
+        :title="`${label}を見る`"
         target="_blank"
         rel="noopener noreferrer"
         class="tag"

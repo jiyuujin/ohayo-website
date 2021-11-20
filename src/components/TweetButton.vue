@@ -1,6 +1,7 @@
 <template>
   <a
     href="https://twitter.com/intent/tweet?hashtags=ohayo_engineer"
+    title="#ohayo_engineerを付けてツイートする"
     target="_blank"
     rel="noopener noreferrer"
     class="tweet_button"
