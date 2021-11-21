@@ -46,6 +46,13 @@ h3 {
   padding-left: 4px;
 }
 
+.expanded_text_multiline {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 footer {
   display: flex;
   flex-wrap: wrap;

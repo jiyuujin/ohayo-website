@@ -7,13 +7,7 @@
       v-for="(label, index) in Object.keys(counts)"
       :key="index"
     >
-      <a
-        :href="`https://github.com/jiyuujin/ohayo-developers/labels/${label}`"
-        :title="`${label}を見る`"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="tag"
-      >
+      <a :href="`/tag/${label}`" :title="`${label}を見る`" class="tag">
         {{ `${label} (${counts[label]})` }}
       </a>
     </span>

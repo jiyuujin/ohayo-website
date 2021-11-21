@@ -8,6 +8,15 @@
   font-size: 1.25rem;
 }
 
+.issues a {
+  color: #2c2e2f;
+  text-decoration: none;
+}
+
+.issues a:visited {
+  color: #2c2e2f;
+}
+
 .tag {
   display: inline-block;
   padding: 0 7px;
@@ -27,6 +36,14 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  .issues a {
+    color: #fefefe;
+  }
+
+  .issues a:visited {
+    color: #fefefe;
+  }
+
   .tag {
     color: #fefefe;
     border: 1px solid #dedede;
