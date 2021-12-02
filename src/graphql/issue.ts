@@ -26,7 +26,7 @@ export const searchQuery = (tag?: string) => gql`
                 name
               }
             }
-            timelineItems(first: 10) {
+            timelineItems(first: 20) {
               nodes {
                 ... on IssueComment {
                   id
