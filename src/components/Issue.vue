@@ -50,7 +50,7 @@
 import { computed } from 'vue'
 import { useQuery, useResult } from '@vue/apollo-composable'
 import dayjs from 'dayjs'
-import marked from 'marked'
+import { md } from '../plugins/markdown-it'
 import { searchQuery } from '../graphql/issue'
 
 import GithubSvg from '../assets/github.svg'
@@ -98,7 +98,7 @@ export default {
           body += `${item.body}\n\n`
         }
       })
-      return marked(body)
+      return md.render(body)
     })
 
     const currentDate = (d: string) => {
