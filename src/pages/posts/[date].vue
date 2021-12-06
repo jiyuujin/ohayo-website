@@ -1,24 +1,26 @@
 <script setup lang="ts">
+import { useHead } from '@vueuse/head'
+
 import Issue from '../../components/Issue.vue'
 import FooterText from '../../components/FooterText.vue'
 import Alert from '../../components/Alert.vue'
 
-import { currentDateText } from '../../services/utilService'
+import { currentDateLabelText } from '../../services/utilService'
 
 const props = defineProps<{ date: string }>()
 const postDate = computed(() => props.date)
-const postDateText = computed(() => currentDateText(props.date))
+const postDateLabel = computed(() => currentDateLabelText(props.date))
 
 useHead({
-  title: `おはようエンジニア in ${postDateText}`,
+  title: `おはようエンジニア in ${postDateLabel.value}`,
   meta: [
     {
       name: 'description',
-      content: `${postDateText} に Twitter Spaces でお喋りした内容のメモを記録しています。`
+      content: `${postDateLabel.value}に Twitter Spaces でお喋りした内容のメモを記録しています。`
     },
     {
       name: 'og:site_name',
-      content: `おはようエンジニア in ${postDateText}`
+      content: `${postDateLabel.value}の雑談記録`
     },
     {
       name: 'og:type',
@@ -26,23 +28,23 @@ useHead({
     },
     {
       name: 'og:description',
-      content: `${postDateText} に Twitter Spaces でお喋りした内容のメモを記録しています。`
+      content: `${postDateLabel.value}に Twitter Spaces でお喋りした内容のメモを記録しています。`
     },
     {
       name: 'og:title',
-      content: `おはようエンジニア in ${postDateText}`
+      content: `${postDateLabel.value}の雑談記録`
     },
     {
       name: 'og:url',
-      content: 'https://ohayo.nekohack.me/'
+      content: `https://ohayo.nekohack.me/posts/${postDate.value}`
     },
     {
       name: 'twitter:description',
-      content: `${postDateText} に Twitter Spaces でお喋りした内容のメモを記録しています。`
+      content: `${postDateLabel.value}に Twitter Spaces でお喋りした内容のメモを記録しています。`
     },
     {
       name: 'twitter:title',
-      content: `おはようエンジニア in ${postDateText}`
+      content: `${postDateLabel.value}の雑談記録`
     },
     {
       name: 'twitter:card',

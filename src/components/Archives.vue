@@ -7,8 +7,8 @@
       <h1>{{ `Archive at ${tag}` }}</h1>
       <div v-for="issue in issues" :key="issue.id" class="issues">
         <router-link
-          :to="`/posts/${currentDateText(issue.createdAt)}`"
-          :title="`${currentDateText(issue.createdAt)}の記事を見る`"
+          :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
+          :title="`${currentDateLabelText(issue.createdAt)}の記事を見る`"
         >
           <h2>{{ issue.title }}</h2>
           <h3>
@@ -28,7 +28,7 @@
 <script lang="ts">
 import { useQuery, useResult } from '@vue/apollo-composable'
 import { searchQuery } from '../graphql/issue'
-import { currentDateText } from '../services/utilService'
+import { currentDateFormatText, currentDateLabelText } from '../services/utilService'
 
 export default {
   props: {
@@ -44,7 +44,7 @@ export default {
       null,
       (data) => data.viewer.repository?.issues?.nodes
     )
-    return { loading, error, issues, currentDateText }
+    return { loading, error, issues, currentDateFormatText, currentDateLabelText }
   }
 }
 </script>
