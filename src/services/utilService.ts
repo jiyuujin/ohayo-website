@@ -56,9 +56,14 @@ export const sortCounts = (items: CountsType) => {
   return Object.fromEntries(sorted)
 }
 
-export const currentDateText = (d: string) => {
+export const currentDateFormatText = (d: string) => {
   const target = new Date(d)
   return target.getFullYear() + '-' + zeroPadding(target.getMonth() + 1) + '-' + zeroPadding(target.getDate())
+}
+
+export const currentDateLabelText = (d: string) => {
+  const target = new Date(d)
+  return target.getFullYear() + '年' + zeroPadding(target.getMonth() + 1) + '月' + zeroPadding(target.getDate()) + '日'
 }
 
 export const zeroPadding = (target: number): string => {
