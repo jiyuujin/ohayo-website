@@ -5,20 +5,18 @@
     </section>
     <section v-else>
       <h1>{{ `Archive at ${tag}` }}</h1>
-      <div v-for="issue in issues" :key="issue.id" class="issues">
+      <div v-for="issue in issues" :key="issue.id" class="archives">
         <router-link
           :to="`/posts/${currentDateText(issue.createdAt)}`"
           :title="`${currentDateText(issue.createdAt)}の記事を見る`"
         >
-          <h2>{{ issue.title }}</h2>
-          <h3>
+          <h2>{{ headlines(issue.timelineItems) }}</h2>
+          <p>
             <span v-for="label in issue.labels.nodes" :key="label.id" class="tag">
               {{ label.name }}
             </span>
-          </h3>
-          <p class="expanded_text_multiline">
-            {{ issue.timelineItems.nodes[0].body ? issue.timelineItems.nodes[0].body : '続きを読む' }}
           </p>
+          <p>{{ currentDateText(issue.createdAt) }}</p>
         </router-link>
       </div>
     </section>
@@ -28,7 +26,7 @@
 <script lang="ts">
 import { useQuery, useResult } from '@vue/apollo-composable'
 import { searchQuery } from '../graphql/issue'
-import { currentDateText } from '../services/utilService'
+import { getHeadlines, currentDateText } from '../services/utilService'
 
 export default {
   props: {
@@ -44,7 +42,21 @@ export default {
       null,
       (data) => data.viewer.repository?.issues?.nodes
     )
-    return { loading, error, issues, currentDateText }
+    const headlines = (items: string) => {
+      let result = ''
+      items.nodes.forEach((node, index: number) => {
+        const headlineList = getHeadlines(node.body)
+        headlineList?.forEach((headline: string, key: number) => {
+          if (index === items.nodes.length - 1 && key === headlineList?.length - 1) {
+            result += `${headline.replace(/## /, '')}`
+          } else {
+            result += `${headline.replace(/## /, '')},`
+          }
+        })
+      })
+      return result
+    }
+    return { loading, error, issues, currentDateText, headlines }
   }
 }
 </script>
