@@ -4,6 +4,7 @@ import { setupLayouts } from 'virtual:generated-layouts'
 import App from './App.vue'
 import './index.css'
 import '@nekohack/normalize.css/dist/index.css'
+import '@nekohack/profile-ui/dist/profile-ui.common.css'
 import { DefaultApolloClient } from '@vue/apollo-composable'
 import { apolloClient } from './plugins/apollo'
 
