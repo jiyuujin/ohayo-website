@@ -76,6 +76,10 @@
   font-size: 16px;
 }
 
+.contributor img {
+  border-radius: 40px;
+}
+
 .participant_wrapper a {
   margin: 0 4px;
 }
