@@ -31,7 +31,7 @@
         -->
         <div v-if="getPost(day)">
           <router-link
-            :to="`/posts/${currentDateText(getPost(day).createdAt)}`"
+            :to="`/posts/${currentDateFormatText(getPost(day).createdAt)}`"
             :title="`${getPost(day).title}を見る`"
           >
             <div v-if="getPost(day).participants?.nodes.length === 1" class="participant_wrapper">
@@ -70,7 +70,7 @@
 <script lang="ts">
 import { ref, computed } from 'vue'
 import dayjs from 'dayjs'
-import { currentDateText } from '../services/utilService'
+import { currentDateFormatText } from '../services/utilService'
 
 type CalendarProps = {
   items?: Array<unknown>
@@ -205,7 +205,7 @@ export default {
       formatYM,
       startOfMonth,
       endOfMonth,
-      currentDateText,
+      currentDateFormatText,
       formatCurrentDate,
       formatPreviousDate,
       currentDate,

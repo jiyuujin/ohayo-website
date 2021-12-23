@@ -60,9 +60,14 @@ export const getHeadlines = (target: string) => {
   return target?.match(/(## )+([a-zA-Z0-9ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー!"#$%&'()*+-.,\/:;<=>?@[\]^_`{|}~ _\.\/\-]+)/g)
 }
 
-export const currentDateText = (d: string) => {
+export const currentDateFormatText = (d: string) => {
   const target = new Date(d)
   return target.getFullYear() + '-' + zeroPadding(target.getMonth() + 1) + '-' + zeroPadding(target.getDate())
+}
+
+export const currentDateLabelText = (d: string) => {
+  const target = new Date(d)
+  return target.getFullYear() + '年' + zeroPadding(target.getMonth() + 1) + '月' + zeroPadding(target.getDate()) + '日'
 }
 
 export const zeroPadding = (target: number): string => {
