@@ -16,7 +16,7 @@
               {{ label.name }}
             </span>
           </p>
-          <p>{{ currentDateText(issue.createdAt) }}</p>
+          <p>{{ currentDateLabelText(issue.createdAt) }}</p>
         </router-link>
       </div>
     </section>
