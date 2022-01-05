@@ -4,17 +4,17 @@
       {{ `Loading...` }}
     </section>
     <section v-else>
-      <h1>{{ currentArticle.title }}</h1>
-      <h2>{{ currentDate(currentArticle.createdAt) }}</h2>
+      <h1>{{ currentArticle?.title }}</h1>
+      <h2>{{ currentDate(currentArticle?.createdAt) }}</h2>
       <h3>
-        <span v-for="label in currentArticle.labels.nodes" :key="label.id" class="tag">
+        <span v-for="label in currentArticle?.labels.nodes" :key="label.id" class="tag">
           {{ label.name }}
         </span>
       </h3>
       <div class="contributor">
         Contributor
         <span
-          v-for="participant in currentArticle.participants.nodes"
+          v-for="participant in currentArticle?.participants.nodes"
           :key="participant.id"
           class="participant_wrapper"
         >
@@ -33,8 +33,8 @@
           <div v-if="currentBody" class="body" v-html="currentBody" />
           <div class="footer-area">
             <a
-              :href="currentArticle.url"
-              :title="`${currentArticle.url}を見る`"
+              :href="currentArticle?.url"
+              :title="`${currentArticle?.url}を見る`"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -54,6 +54,7 @@ import { useQuery, useResult } from '@vue/apollo-composable'
 import dayjs from 'dayjs'
 import { md } from '../plugins/markdown-it'
 import { searchQuery } from '../graphql/issue'
+import { currentJPStandardDate } from '../services/utilService'
 
 import GithubSvg from '../assets/github.svg'
 
@@ -78,9 +79,9 @@ export default {
     const currentArticle = computed(() => {
       return issues.value.filter((item: any) => {
         if (
-          String(dayjs(item.createdAt).format('YYYY')) === String(new Date(props.date).getFullYear()) &&
-          String(dayjs(item.createdAt).format('MM')) === String(new Date(props.date).getMonth() + 1) &&
-          String(dayjs(item.createdAt).format('D')) === String(new Date(props.date).getDate())) {
+          currentJPStandardDate(item.createdAt).format('YYYY') === String(new Date(props.date).getFullYear()) &&
+          currentJPStandardDate(item.createdAt).format('M') === String(new Date(props.date).getMonth() + 1) &&
+          currentJPStandardDate(item.createdAt).format('D') === String(new Date(props.date).getDate())) {
           return item
         }
       })[0]
@@ -90,9 +91,9 @@ export default {
       let body = ''
       issues.value.filter((item) => {
         if (
-          String(dayjs(item.createdAt).format('YYYY')) === String(new Date(props.date).getFullYear()) &&
-          String(dayjs(item.createdAt).format('MM')) === String(new Date(props.date).getMonth() + 1) &&
-          String(dayjs(item.createdAt).format('D')) === String(new Date(props.date).getDate())) {
+          currentJPStandardDate(item.createdAt).format('YYYY') === String(new Date(props.date).getFullYear()) &&
+          currentJPStandardDate(item.createdAt).format('M') === String(new Date(props.date).getMonth() + 1) &&
+          currentJPStandardDate(item.createdAt).format('D') === String(new Date(props.date).getDate())) {
           return item
         }
       })[0].timelineItems.nodes?.forEach((item) => {
