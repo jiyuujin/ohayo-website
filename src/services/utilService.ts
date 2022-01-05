@@ -1,3 +1,5 @@
+import dayjs from 'dayjs'
+
 export type IssuesType = Array<{
   id: string
   body: string
@@ -58,6 +60,10 @@ export const sortCounts = (items: CountsType) => {
 
 export const getHeadlines = (target: string) => {
   return target?.match(/(## )+([a-zA-Z0-9ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー!"#$%&'()*+-.,\/:;<=>?@[\]^_`{|}~ _\.\/\-]+)/g)
+}
+
+export const currentJPStandardDate = (d: string) => {
+  return dayjs(d).add(9, 'hh')
 }
 
 export const currentDateFormatText = (d: string) => {
