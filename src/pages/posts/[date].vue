@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Issue from '../../components/Issue.vue'
+import Issue from '../../components/IssueView.vue'
 import FooterText from '../../components/FooterText.vue'
-import Alert from '../../components/Alert.vue'
+import Alert from '../../components/AlertView.vue'
 
 import { currentDateLabelText } from '../../services/utilService'
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Issues from '../components/Issues.vue'
+import Issues from '../components/IssuesView.vue'
 import FooterText from '../components/FooterText.vue'
-import Alert from '../components/Alert.vue'
+import Alert from '../components/AlertView.vue'
 import TweetButton from '../components/TweetButton.vue'
 </script>
 

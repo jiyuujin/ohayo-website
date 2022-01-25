@@ -15,8 +15,8 @@
 import { useQuery, useResult } from '@vue/apollo-composable'
 import { searchQuery } from '../graphql/issue'
 
-import Calendar from '../components/Calendar.vue'
-import Maintainer from '../components/Maintainer.vue'
+import Calendar from './CalendarView.vue'
+import Maintainer from './MaintainerView.vue'
 import HistoryTags from '../components/HistoryTags.vue'
 
 export default {

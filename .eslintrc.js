@@ -12,6 +12,12 @@ module.exports = {
     }
   },
   rules: {
-    'vue/no-multiple-template-root': 'off'
+    'vue/no-multiple-template-root': 'off',
+    'vue/multi-word-component-names': [
+      'error',
+      {
+        ignores: ['index', '[...all]', 'default', '404']
+      }
+    ]
   }
 }

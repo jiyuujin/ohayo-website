@@ -18,6 +18,7 @@
           </p>
           <p>{{ currentDateLabelText(issue.createdAt) }}</p>
         </router-link>
+        <read-more :content="issue.timelineItems.nodes[0].body" />
       </div>
     </section>
   </div>
