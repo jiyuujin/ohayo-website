@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import Archives from '../../components/ArchivesView.vue'
+import ArchivesView from '../../components/ArchivesView.vue'
 import FooterText from '../../components/FooterText.vue'
-import Alert from '../../components/AlertView.vue'
+import AlertView from '../../components/AlertView.vue'
 
 const props = defineProps<{ tag: string }>()
 const postTag = computed(() => props.tag)
@@ -9,8 +9,8 @@ const postTag = computed(() => props.tag)
 
 <template>
   <main>
-    <alert />
-    <archives :tag="postTag" />
+    <alert-view />
+    <archives-view :tag="postTag" />
     <footer-text />
   </main>
 </template>
