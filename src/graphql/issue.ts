@@ -10,7 +10,7 @@ export const searchQuery = (tag?: string) => gql`
         name
         issues(
           states: OPEN
-          last: 100
+          first: 100
           orderBy: { field: CREATED_AT, direction: DESC }
           ${tag ? `labels: "${tag}"` : ''}
         ) {
