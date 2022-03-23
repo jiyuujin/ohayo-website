@@ -1,7 +1,7 @@
 <template>
-  <h3 id="#maintainer">
+  <h2 id="#maintainer">
     Maintainer
-  </h3>
+  </h2>
   <profile
     :image="`https://i.imgur.com/X0CcoU9.jpg`"
     :name="maintainerTitle"
