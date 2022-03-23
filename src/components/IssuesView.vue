@@ -16,13 +16,11 @@ import { useQuery, useResult } from '@vue/apollo-composable'
 import { searchQuery } from '../graphql/issue'
 
 import Calendar from './CalendarView.vue'
-import Maintainer from './MaintainerView.vue'
 import HistoryTags from '../components/HistoryTags.vue'
 
 export default {
   components: {
     Calendar,
-    Maintainer,
     HistoryTags
   },
   setup() {

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import IssuesView from '../components/IssuesView.vue'
 import FooterText from '../components/FooterText.vue'
+import MaintainerView from '../components/MaintainerView.vue'
 import AlertView from '../components/AlertView.vue'
 import TweetButton from '../components/TweetButton.vue'
 </script>
@@ -11,6 +12,7 @@ import TweetButton from '../components/TweetButton.vue'
     <tweet-button />
     <alert-view />
     <issues-view />
+    <maintainer-view />
     <footer-text />
   </main>
 </template>
