@@ -7,12 +7,10 @@
     class="tweet_button"
     role="button"
   >
-    {{ `#ohayo_engineer` }}
     <span class="icon_wrapper">
       <TwitterIcon />
     </span>
   </a>
-  <p>{{ `平日は毎日、Twitter Spaces でお喋りしている内容のメモを記録しています。` }}</p>
 </template>
 
 <script lang="ts">
