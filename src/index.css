@@ -1,3 +1,4 @@
+@import 'assets/_nav.css';
 @import 'assets/_calendar.css';
 @import 'assets/_detail.css';
 @import 'assets/_tags.css';
@@ -8,7 +9,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 60px;
 }
 
 a {
@@ -31,7 +31,7 @@ h3 {
   justify-content: center;
   margin: auto;
   text-decoration: none;
-  width: 273px;
+  width: 48px;
 }
 
 .tweet_button:visited {
@@ -43,7 +43,7 @@ h3 {
 }
 
 .tweet_button .icon_wrapper {
-  padding-left: 4px;
+  padding-left: 2px;
 }
 
 .expanded_text_multiline {

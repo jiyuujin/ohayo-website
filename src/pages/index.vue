@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import IssuesView from '../components/IssuesView.vue'
 import FooterText from '../components/FooterText.vue'
+import NavText from '../components/NavText.vue'
 import MaintainerView from '../components/MaintainerView.vue'
 import AlertView from '../components/AlertView.vue'
-import TweetButton from '../components/TweetButton.vue'
 </script>
 
 <template>
   <main>
-    <h1>{{ `みんなで作るブログ` }}</h1>
-    <tweet-button />
+    <nav-text />
     <alert-view />
     <issues-view />
     <maintainer-view />
