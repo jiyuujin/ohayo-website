@@ -4,7 +4,7 @@
       {{ `Loading...` }}
     </section>
     <section v-else>
-      <h1>{{ `Archive at ${tag}` }}</h1>
+      <h1 v-if="tag">{{ `Archive at ${tag}` }}</h1>
       <div v-for="issue in issues" :key="issue.id" class="archives">
         <router-link
           :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
@@ -37,7 +37,7 @@ export default {
     }
   },
   setup(props: { tag: string }) {
-    const { result, error, loading } = useQuery(searchQuery(props.tag))
+    const { result, error, loading } = useQuery(searchQuery(props.tag || ''))
     const issues = useResult(
       result,
       null,
