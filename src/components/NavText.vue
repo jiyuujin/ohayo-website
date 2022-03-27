@@ -9,7 +9,12 @@
         </h1>
 
         <div class="nav-links">
-          <tweet-button />
+          <a href="https://webneko.dev" title="Web猫ブログを見る" class="nav-link">
+            Blog
+          </a>
+          <a href="https://twitter.com/intent/tweet?hashtags=ohayo_engineer" title="ツイートする" class="nav-link">
+            Tweet
+          </a>
         </div>
       </div>
     </nav>
@@ -17,11 +22,7 @@
 </template>
 
 <script lang="ts">
-import TweetButton from '../components/TweetButton.vue'
-
 export default {
-  components: {
-    TweetButton
-  }
+  //
 }
 </script>
