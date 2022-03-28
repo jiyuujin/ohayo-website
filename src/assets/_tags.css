@@ -63,6 +63,10 @@
   text-decoration: none;
 }
 
+.tag a:visited {
+  color: #2c2e2f;
+}
+
 @media (prefers-color-scheme: dark) {
   .issues a {
     color: #fefefe;
@@ -86,6 +90,10 @@
   }
 
   .tag a {
+    color: #fefefe;
+  }
+
+  .tag a:visited {
     color: #fefefe;
   }
 }
