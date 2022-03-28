@@ -8,7 +8,9 @@
       <h2>{{ currentDate(currentArticle?.createdAt) }}</h2>
       <h3>
         <span v-for="label in currentArticle?.labels.nodes" :key="label.id" class="tag">
-          {{ label.name }}
+          <router-link :to="`/tag/${label.name}`" :title="label.name">
+            {{ label.name }}
+          </router-link>
         </span>
       </h3>
       <div class="contributor">
