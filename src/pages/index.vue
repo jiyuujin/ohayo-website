@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import IssuesView from '../components/IssuesView.vue'
+import ArchivesView from '../components/ArchivesView.vue'
 import FooterText from '../components/FooterText.vue'
 import NavText from '../components/NavText.vue'
 import MaintainerView from '../components/MaintainerView.vue'
@@ -10,7 +10,7 @@ import AlertView from '../components/AlertView.vue'
   <main>
     <nav-text />
     <alert-view />
-    <issues-view />
+    <archives-view />
     <maintainer-view />
     <footer-text />
   </main>

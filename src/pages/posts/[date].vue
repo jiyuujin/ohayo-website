@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import IssueView from '../../components/IssueView.vue'
 import FooterText from '../../components/FooterText.vue'
+import NavText from '../../components/NavText.vue'
 import AlertView from '../../components/AlertView.vue'
 
 import { currentDateLabelText } from '../../services/utilService'
@@ -12,6 +13,7 @@ const postDateLabel = computed(() => currentDateLabelText(props.date))
 
 <template>
   <main>
+    <nav-text />
     <alert-view />
     <issue-view :date="postDate" />
     <footer-text />

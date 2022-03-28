@@ -4,16 +4,21 @@
       {{ `Loading...` }}
     </section>
     <section v-else>
-      <h1>{{ `Archive at ${tag}` }}</h1>
+      <h1 v-if="tag">
+        {{ `Archive at ${tag}` }}
+      </h1>
       <div v-for="issue in issues" :key="issue.id" class="archives">
         <router-link
+          v-if="headlines(issue.timelineItems) !== ''"
           :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
           :title="`${currentDateLabelText(issue.createdAt)}の記事を見る`"
         >
           <h2>{{ headlines(issue.timelineItems) }}</h2>
           <p>
             <span v-for="label in issue.labels.nodes" :key="label.id" class="tag">
-              {{ label.name }}
+              <router-link :to="`/tag/${label.name}`" :title="label.name">
+                {{ label.name }}
+              </router-link>
             </span>
           </p>
           <p>{{ currentDateLabelText(issue.createdAt) }}</p>
@@ -36,7 +41,7 @@ export default {
     }
   },
   setup(props: { tag: string }) {
-    const { result, error, loading } = useQuery(searchQuery(props.tag))
+    const { result, error, loading } = useQuery(searchQuery(props.tag || ''))
     const issues = useResult(
       result,
       null,
@@ -44,8 +49,8 @@ export default {
     )
     const headlines = (items: string) => {
       let result = ''
-      items.nodes.forEach((node, index: number) => {
-        const headlineList = getHeadlines(node.body)
+      items.nodes?.forEach((node, index: number) => {
+        const headlineList = getHeadlines(node?.body)
         headlineList?.forEach((headline: string, key: number) => {
           if (index === items.nodes.length - 1 && key === headlineList?.length - 1) {
             result += `${headline.replace(/## /, '')}`
