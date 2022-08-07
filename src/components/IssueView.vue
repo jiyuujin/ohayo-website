@@ -46,6 +46,11 @@
           </div>
         </div>
       </div>
+      <social-menu
+        :slug-text="currentArticle.slug"
+        :title="currentArticle.title"
+        :is-vertical="!isVertical"
+      />
     </section>
   </div>
 </template>
@@ -54,14 +59,16 @@
 import { computed } from 'vue'
 import { useQuery, useResult } from '@vue/apollo-composable'
 import dayjs from 'dayjs'
+import SocialMenu from './SocialMenu.vue'
 import { md } from '../plugins/markdown-it'
 import { searchQuery } from '../graphql/issue'
 import { currentJPStandardDate } from '../services/utilService'
 
-import GithubSvg from '../assets/github.svg'
+import GithubSvg from '../assets/github_logo.svg'
 
 export default {
   components: {
+    SocialMenu,
     GithubSvg
   },
   props: {
@@ -71,6 +78,7 @@ export default {
     }
   },
   setup(props) {
+    const isVertical = ref(true)
     const { result, error, loading } = useQuery(searchQuery)
     const issues = useResult(
       result,
@@ -110,7 +118,7 @@ export default {
       return dayjs(d).format('YYYY/MM/DD')
     }
 
-    return { loading, error, currentArticle, currentBody, currentDate }
+    return { isVertical, loading, error, currentArticle, currentBody, currentDate }
   }
 }
 </script>
