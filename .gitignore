@@ -9,3 +9,5 @@ out
 coverage
 
 .env
+
+.vite-ssg-temp
