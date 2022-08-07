@@ -1,0 +1,24 @@
+.social-menu {
+  text-align: center;
+}
+
+.social-menu button {
+  background: transparent;
+  border: 0;
+}
+
+.social-menu svg {
+  width: 36px;
+  height: 36px;
+  margin: 8px;
+}
+
+.social-menu-vertical {
+  position: sticky;
+  top: 60px;
+  left: 2%;
+}
+
+.social-menu-horizontal {
+  display: inline;
+}
