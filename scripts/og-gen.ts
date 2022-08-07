@@ -1,9 +1,9 @@
 'use strict'
 
-const puppeteer = require('puppeteer')
-const path = require('path')
+import puppeteer from 'puppeteer'
+import path from 'path'
 
-const fs = require('fs')
+// import fs from 'fs'
 
 const OG_SOURCE_DIR_PATH = path.join(__dirname, '..', 'data')
 const OG_SOURCE_HTML_FILE_PATH = path.join(OG_SOURCE_DIR_PATH, 'og.html')
@@ -26,7 +26,7 @@ async function captureOgImage(browser: any, title: string, description: string, 
   await page.close()
 }
 
-;(async function () {
+(async function () {
   const ogList = [{ title: 'おはようエンジニア', description: '#ohayo_engineer', slug: 'ohayo-engineer' }]
 
   const browser = await puppeteer.launch()
