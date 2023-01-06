@@ -1,70 +1,55 @@
 <template>
   <div>
-    <section v-if="loading">
-      {{ `Loading...` }}
-    </section>
-    <section v-else>
-      <h1>{{ currentArticle?.title }}</h1>
-      <h2>{{ currentDate(currentArticle?.createdAt) }}</h2>
-      <h3>
-        <span v-for="label in currentArticle?.labels.nodes" :key="label.id" class="tag">
-          <router-link :to="`/tag/${label.name}`" :title="label.name">
-            {{ label.name }}
-          </router-link>
-        </span>
-      </h3>
-      <div class="contributor">
-        Contributor
-        <span
-          v-for="participant in currentArticle?.participants.nodes"
-          :key="participant.id"
-          class="participant_wrapper"
-        >
+    <div class="article">
+      <div class="post-detail">
+        <div v-if="currentBody" class="body" v-html="currentBody" />
+        <div class="footer-area">
           <a
-            :href="`https://github.com/${participant.login}`"
-            :title="`${participant.login}を見る`"
+            :href="currentArticle?.url"
+            :title="`${currentArticle?.url}を見る`"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img :alt="participant.name" :src="participant.avatarUrl" />
+            <GithubSvg />
+            <span class="editing_label">Githubで編集を提案</span>
           </a>
-        </span>
-      </div>
-      <div class="article">
-        <div class="post-detail">
-          <div v-if="currentBody" class="body" v-html="currentBody" />
-          <div class="footer-area">
-            <a
-              :href="currentArticle?.url"
-              :title="`${currentArticle?.url}を見る`"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GithubSvg />
-              <span class="editing_label">Githubで編集を提案</span>
-            </a>
-          </div>
         </div>
       </div>
-      <social-menu
-        :slug-text="currentArticle.slug"
-        :title="currentArticle.title"
-        :is-vertical="!isVertical"
-      />
-    </section>
+    </div>
+
+    <div class="contributor">
+      Contributor
+      <span
+        v-for="participant in currentArticle?.participants.nodes"
+        :key="participant.id"
+        class="participant_wrapper"
+      >
+        <a
+          :href="`https://github.com/${participant.login}`"
+          :title="`${participant.login}を見る`"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img :alt="participant.name" :src="participant.avatarUrl" />
+        </a>
+      </span>
+    </div>
+
+    <social-menu
+      :slug-text="currentArticle.slug"
+      :title="currentArticle.title"
+      :is-vertical="!isVertical"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import { computed } from 'vue'
-import { useQuery, useResult } from '@vue/apollo-composable'
 import dayjs from 'dayjs'
-import SocialMenu from './SocialMenu.vue'
 import { md } from '../plugins/markdown-it'
-import { searchQuery } from '../graphql/issue'
 import { currentJPStandardDate } from '../services/utilService'
-
 import GithubSvg from '../assets/github_logo.svg'
+
+import SocialMenu from './SocialMenu.vue'
 
 export default {
   components: {
@@ -72,19 +57,17 @@ export default {
     GithubSvg
   },
   props: {
+    data: {
+      type: Array,
+      default: () => []
+    },
     date: {
       type: String,
       default: ''
     }
   },
   setup(props) {
-    const isVertical = ref(true)
-    const { result, error, loading } = useQuery(searchQuery)
-    const issues = useResult(
-      result,
-      null,
-      (data) => data.viewer.repository?.issues?.nodes
-    )
+    const issues = computed(() => props.data)
 
     const currentArticle = computed(() => {
       return issues.value.filter((item: any) => {
@@ -114,11 +97,13 @@ export default {
       return md.render(body)
     })
 
+    const isVertical = ref(true)
+
     const currentDate = (d: string) => {
       return dayjs(d).format('YYYY/MM/DD')
     }
 
-    return { isVertical, loading, error, currentArticle, currentBody, currentDate }
+    return { issues, currentArticle, currentBody, isVertical, currentDate }
   }
 }
 </script>
