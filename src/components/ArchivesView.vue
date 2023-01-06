@@ -1,52 +1,37 @@
 <template>
   <div>
-    <section v-if="loading">
-      {{ `Loading...` }}
-    </section>
-    <section v-else>
-      <h1 v-if="tag">
-        {{ `Archive at ${tag}` }}
-      </h1>
-      <div v-for="issue in issues" :key="issue.id" class="archives">
-        <router-link
-          v-if="headlines(issue.timelineItems) !== ''"
-          :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
-          :title="`${currentDateLabelText(issue.createdAt)}の記事を見る`"
-        >
-          <h2>{{ headlines(issue.timelineItems) }}</h2>
-          <p>
-            <span v-for="label in issue.labels.nodes" :key="label.id" class="tag">
-              <router-link :to="`/tag/${label.name}`" :title="label.name">
-                {{ label.name }}
-              </router-link>
-            </span>
-          </p>
-          <p>{{ currentDateLabelText(issue.createdAt) }}</p>
-        </router-link>
-      </div>
-    </section>
+    <div v-for="issue in issues" :key="issue.id" class="archives">
+      <router-link
+        v-if="headlines(issue.timelineItems) !== ''"
+        :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
+        :title="`${currentDateLabelText(issue.createdAt)}の記事を見る`"
+      >
+        <h2>{{ headlines(issue.timelineItems) }}</h2>
+        <p>
+          <span v-for="label in issue.labels.nodes" :key="label.id" class="tag">
+            <router-link :to="`/tag/${label.name}`" :title="label.name">
+              {{ label.name }}
+            </router-link>
+          </span>
+        </p>
+        <p>{{ currentDateLabelText(issue.createdAt) }}</p>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { useQuery, useResult } from '@vue/apollo-composable'
-import { searchQuery } from '../graphql/issue'
 import { getHeadlines, currentDateFormatText, currentDateLabelText } from '../services/utilService'
 
 export default {
   props: {
-    tag: {
-      type: String,
-      default: ''
+    data: {
+      type: Array,
+      default: () => []
     }
   },
-  setup(props: { tag: string }) {
-    const { result, error, loading } = useQuery(searchQuery(props.tag || ''))
-    const issues = useResult(
-      result,
-      null,
-      (data) => data.viewer.repository?.issues?.nodes
-    )
+  setup(props) {
+    const issues = computed(() => props.data)
     const headlines = (items: string) => {
       let result = ''
       items.nodes?.forEach((node, index: number) => {
@@ -59,9 +44,10 @@ export default {
           }
         })
       })
+      result = result.slice(0, -1)
       return result
     }
-    return { loading, error, issues, currentDateFormatText, currentDateLabelText, headlines }
+    return { issues, currentDateFormatText, currentDateLabelText, headlines }
   }
 }
 </script>

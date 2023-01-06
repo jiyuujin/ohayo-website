@@ -1,16 +1,34 @@
 <script setup lang="ts">
+import { useQuery, useResult } from '@vue/apollo-composable'
+import { searchQuery } from '../../graphql/issue'
+
 import ArchivesView from '../../components/ArchivesView.vue'
 import FooterText from '../../components/FooterText.vue'
 import NavText from '../../components/NavText.vue'
 
 const props = defineProps<{ tag: string }>()
-const postTag = computed(() => props.tag)
+const tag = computed(() => props.tag)
+
+const { result, error, loading } = useQuery(searchQuery(tag.value || ''))
+const issues = useResult(
+  result,
+  null,
+  (data) => data.viewer.repository?.issues?.nodes
+)
 </script>
 
 <template>
   <main>
-    <nav-text />
-    <archives-view :tag="postTag" />
+    <nav-text :subheader="`${tag} タグ`" />
+    <section v-if="loading">
+      {{ `Loading...` }}
+    </section>
+    <section v-else-if="error">
+      {{ `Error` }}
+    </section>
+    <section v-else>
+      <archives-view :data="issues" />
+    </section>
     <footer-text />
   </main>
 </template>

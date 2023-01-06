@@ -2,11 +2,16 @@
   <div class="nav-container">
     <nav id="nav" ref="navRef" class="nav">
       <div class="nav-content">
-        <h1 class="nav-icon">
-          <a href="/" title="トップへ戻る">
-            <span class="nav-hidden">みんな</span>で作るブログ
-          </a>
-        </h1>
+        <div class="nav-icon">
+          <h1>
+            <a href="/" title="トップへ戻る">
+              <span class="nav-hidden">みんな</span>で作るブログ
+            </a>
+          </h1>
+          <h2 v-if="subheader">
+            {{ subheader }}
+          </h2>
+        </div>
 
         <div class="nav-links">
           <a href="https://webneko.dev" title="Web猫ブログを見る" class="nav-link">
@@ -23,6 +28,11 @@
 
 <script lang="ts">
 export default {
-  //
+  props: {
+    subheader: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
