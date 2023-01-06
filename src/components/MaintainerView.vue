@@ -15,8 +15,6 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
-
 import { Profile } from '@nekohack/profile-ui'
 
 export default {
