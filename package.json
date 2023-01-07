@@ -11,6 +11,7 @@
     "build:front": "vite build",
     "build:ssg": "vite-ssg build",
     "build:og-gen": "ts-node --project tsconfig.builder.json scripts/og-gen.ts",
+    "deploy": "yarn workspace @nekohack/ohayo-server deploy",
     "lint": "npm run lint:server && npm run lint:front",
     "lint:server": "yarn workspace @nekohack/ohayo-server lint --fix",
     "lint:front": "eslint ./ --ext ts,vue --fix",
