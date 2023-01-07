@@ -1,13 +1,19 @@
 {
-  "name": "vite-vue3",
+  "name": "@nekohack/ohayo-front",
   "version": "0.0.0",
+  "description": "",
+  "author": "yuukit <yuma.kitamura@ponos.co.jp>",
+  "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run build:server && npm run build:front",
+    "build:server": "yarn workspace @nekohack/ohayo-server build",
+    "build:front": "vite build",
     "build:ssg": "vite-ssg build",
     "build:og-gen": "ts-node --project tsconfig.builder.json scripts/og-gen.ts",
-    "lint": "eslint ./ --ext ts,vue",
-    "lint:fix": "eslint ./ --ext ts,vue --fix",
+    "lint": "npm run lint:server && npm run lint:front",
+    "lint:server": "yarn workspace @nekohack/ohayo-server lint --fix",
+    "lint:front": "eslint ./ --ext ts,vue --fix",
     "test": "jest",
     "test-cover": "jest --coverage",
     "test:w": "npm run test-cover -- --watch"
@@ -94,5 +100,9 @@
     "transformIgnorePatterns": [
       "node_modules"
     ]
-  }
+  },
+  "workspaces": [
+    "*",
+    "server/*"
+  ]
 }

@@ -11,3 +11,5 @@ coverage
 .env
 
 .vite-ssg-temp
+
+.clasp.json
