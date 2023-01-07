@@ -14,10 +14,10 @@ VITE_APP_GITHUB_API_ACCESS_TOKEN=
 
 ### Serve in Google Apps Script
 
-Confirm `src/appsscript.json`. Next, you set environment config. Run `cp .env.example .env`, input environmental values. Serve in Google Developers Console.
+Confirm `src/appsscript.json`. Next, you set environment config. Run `cp server/.clasp.json.example server/.clasp.json`, input environmental values. Serve in Google Developers Console.
 
 ```bash
-yarn deploy
+npm run deploy
 ```
 
 ### Serve in Google Chrome
