@@ -17,4 +17,4 @@ dist/
 package-lock.json
 yarn.lock
 
-../.clasp.json
+.clasp.json
