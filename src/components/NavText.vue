@@ -14,7 +14,7 @@
         </div>
 
         <div class="nav-links">
-          <a href="https://webneko.dev" title="Web猫ブログを見る" class="nav-link">
+          <a href="https://blog.nekohack.me" title="猫の足あとを見る" class="nav-link">
             Blog
           </a>
           <a href="https://twitter.com/intent/tweet?hashtags=ohayo_engineer" title="ツイートする" class="nav-link">

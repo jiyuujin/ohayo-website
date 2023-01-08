@@ -23,7 +23,7 @@ export default {
   },
   setup() {
     const maintainerTitle = ref('')
-    const maintainerDescription = ref('Web Developer, Design Advocator 🇯🇵<br>Please check out the <a href="https://webneko.dev/" target="_blank" rel="noopener noreferrer">blog</a> posts without hesitation 👍🏼')
+    const maintainerDescription = ref('Web Developer, Design Advocator 🇯🇵<br>Please check out the <a href="https://blog.nekohack.me/" target="_blank" rel="noopener noreferrer">blog</a> posts without hesitation 👍🏼')
     return { maintainerTitle, maintainerDescription }
   }
 }
