@@ -4,6 +4,11 @@
 @import 'assets/_tags.css';
 @import 'assets/_social-menu.css';
 
+body {
+  background-color: rgba(232, 242, 255, 100%);
+  color: #303030;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -73,16 +78,6 @@ footer {
 
 .logo {
   height: 4em;
-}
-
-@media (prefers-color-scheme: dark) {
-  .copyright a {
-    color: #fff;
-  }
-
-  .copyright a:visited {
-    color: #fff;
-  }
 }
 
 @media (max-width: 600px) {
