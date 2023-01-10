@@ -4,6 +4,32 @@
 @import 'assets/_tags.css';
 @import 'assets/_social-menu.css';
 
+/* ダークモードを使わない場合 */
+body {
+  background-color: rgba(232, 242, 255, 100%) !important;
+  color: #303030 !important;
+}
+main {
+  background-color: transparent;
+}
+.article .post-detail h2,
+.article .post-detail h3,
+.article .post-detail h4,
+.article .post-detail p,
+.article .post-detail li,
+.article .post-detail td,
+.article .post-detail tr {
+  color: #303030 !important;
+}
+blockquote.twitter-tweet {
+  border-color: #eee #ddd #bbb !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .15) !important;
+}
+.article .post-detail .twitter-tweet {
+  background: #fff !important;
+  border: 1px solid #ccc !important;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -73,16 +99,6 @@ footer {
 
 .logo {
   height: 4em;
-}
-
-@media (prefers-color-scheme: dark) {
-  .copyright a {
-    color: #fff;
-  }
-
-  .copyright a:visited {
-    color: #fff;
-  }
 }
 
 @media (max-width: 600px) {

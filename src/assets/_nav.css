@@ -69,7 +69,7 @@
 
 .nav-link:hover {
   color: #000;
-  background-color: #474747;
+  background-color: #efefef;
 }
 
 .hamburger-container {
@@ -111,43 +111,5 @@
   .hamburger,
   .hamburger-container {
     display: none;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .nav {
-    background-color: #303030;
-  }
-
-  .nav-icon a {
-    color: #fff !important;
-  }
-
-  .nav-link {
-    color: #fff;
-  }
-
-  .nav-link:hover {
-    color: #fff;
-    background-color: #474747;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .nav {
-    background-color: #303030;
-  }
-
-  .nav-icon a {
-    color: #fff;
-  }
-
-  .nav-link {
-    color: #fff !important;
-  }
-
-  .nav-link:hover {
-    color: #fff;
-    background-color: #747474;
   }
 }
