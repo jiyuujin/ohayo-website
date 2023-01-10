@@ -26,6 +26,13 @@ module.exports = defineConfig({
     vue(),
     svgLoader()
   ],
+  css: {
+    postcss: {
+      plugins: [
+        require('autoprefixer')
+      ]
+    }
+  },
   define: viteEnv,
   server: {
     fs: {

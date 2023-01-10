@@ -126,12 +126,6 @@
   opacity: 1;
 }
 
-@media (prefers-color-scheme: dark) {
-  .calendar a {
-    color: #fff;
-  }
-}
-
 @media (max-width: 600px) {
   .calendar {
     display: flex;
