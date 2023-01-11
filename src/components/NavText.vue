@@ -14,6 +14,9 @@
         </div>
 
         <div class="nav-links">
+          <a href="https://friday.nekohack.me" title="1週間の総浚いを確認する" class="nav-link">
+            Fri
+          </a>
           <a href="https://blog.nekohack.me" title="猫の足あとを見る" class="nav-link">
             Blog
           </a>
