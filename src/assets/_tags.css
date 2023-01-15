@@ -17,34 +17,6 @@
   color: #2c2e2f;
 }
 
-.archives {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.archives a {
-  color: #2c2e2f;
-  text-decoration: none;
-}
-
-.archives a:visited {
-  color: #2c2e2f;
-}
-
-.archives h2 {
-  text-align: left;
-  font-size: 1.08rem;
-}
-
-.archives p {
-  text-align: left;
-  font-size: 0.96rem;
-}
-
 .tag {
   display: inline-block;
   padding: 0 7px;

@@ -16,8 +16,8 @@ const issues = computed(() => {
 </script>
 
 <template>
-  <main>
-    <nav-text />
+  <nav-text />
+  <div class="content">
     <section v-if="loading">
       {{ `Loading...` }}
     </section>
@@ -28,6 +28,17 @@ const issues = computed(() => {
       <archives-view :data="issues" />
     </section>
     <maintainer-view />
-    <footer-text />
-  </main>
+  </div>
+  <footer-text />
 </template>
+
+<style>
+.content {
+  margin-top: 4rem;
+  margin-bottom: 8rem;
+}
+
+.content :global(main > * + *) {
+  margin-top: 1rem;
+}
+</style>

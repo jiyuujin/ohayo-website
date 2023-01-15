@@ -1,3 +1,39 @@
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto, 1fr, auto);
+}
+
+.grid a {
+  color: #2c2e2f;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.grid a:visited {
+  color: #2c2e2f;
+}
+
+.grid h2 {
+  margin: 0;
+  text-align: left;
+  font-size: 1.08rem;
+}
+
+.grid p {
+  text-align: left;
+  font-size: 0.96rem;
+}
+
+.grid .tags,
+.grid .created_at {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .post-detail .footer-area {
   padding: 8px 0;
   margin: 2px;
