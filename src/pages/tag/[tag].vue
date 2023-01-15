@@ -18,8 +18,8 @@ const issues = useResult(
 </script>
 
 <template>
-  <main>
-    <nav-text :subheader="`${tag} タグ`" />
+  <nav-text :subheader="`${tag} タグ`" />
+  <div class="section">
     <section v-if="loading">
       {{ `Loading...` }}
     </section>
@@ -29,6 +29,6 @@ const issues = useResult(
     <section v-else>
       <archives-view :data="issues" />
     </section>
-    <footer-text />
-  </main>
+  </div>
+  <footer-text />
 </template>

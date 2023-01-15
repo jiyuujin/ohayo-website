@@ -20,8 +20,8 @@ const issues = useResult(
 </script>
 
 <template>
-  <main>
-    <nav-text />
+  <nav-text />
+  <div class="section">
     <section v-if="loading">
       {{ `Loading...` }}
     </section>
@@ -31,6 +31,6 @@ const issues = useResult(
     <section v-else>
       <issue-view :data="issues" :date="postDate" />
     </section>
-    <footer-text />
-  </main>
+  </div>
+  <footer-text />
 </template>
