@@ -2,6 +2,7 @@
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto, 1fr, auto);
+  padding: 12px 0;
 }
 
 .grid a {
