@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useQuery, useResult } from '@vue/apollo-composable'
+import { useQuery } from '@vue/apollo-composable'
 import { searchQuery } from '../../graphql/issue'
 import { currentDateLabelText } from '../../services/utilService'
 
@@ -11,12 +11,10 @@ const props = defineProps<{ date: string }>()
 const postDate = computed(() => props.date)
 const postDateLabel = computed(() => currentDateLabelText(props.date))
 
-const { result, error, loading } = useQuery(searchQuery)
-const issues = useResult(
-  result,
-  null,
-  (data) => data.viewer.repository?.issues?.nodes
-)
+const { result: github, error, loading } = useQuery(searchQuery)
+const issues = computed(() => {
+  return github.value.viewer.repository?.issues?.nodes
+})
 </script>
 
 <template>

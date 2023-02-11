@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useQuery, useResult } from '@vue/apollo-composable'
+import { useQuery } from '@vue/apollo-composable'
 import { searchQuery } from '../../graphql/issue'
 
 import ArchivesView from '../../components/ArchivesView.vue'
@@ -9,12 +9,10 @@ import NavText from '../../components/NavText.vue'
 const props = defineProps<{ tag: string }>()
 const tag = computed(() => props.tag)
 
-const { result, error, loading } = useQuery(searchQuery(tag.value || ''))
-const issues = useResult(
-  result,
-  null,
-  (data) => data.viewer.repository?.issues?.nodes
-)
+const { result: github, error, loading } = useQuery(searchQuery(tag.value || ''))
+const issues = computed(() => {
+  return github.value.repository?.issues?.nodes
+})
 </script>
 
 <template>
