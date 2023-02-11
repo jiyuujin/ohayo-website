@@ -1,8 +1,8 @@
 @import 'assets/_nav.css';
 @import 'assets/_calendar.css';
 @import 'assets/_detail.css';
-@import 'assets/_tags.css';
 @import 'assets/_social-menu.css';
+@import 'assets/_section.css';
 
 body {
   background-color: rgba(232, 242, 255, 100%);

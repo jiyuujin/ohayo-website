@@ -1,0 +1,59 @@
+.section {
+  margin: 8px 0;
+  background: rgba(232, 242, 255, 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.main {
+  padding: 0 8px;
+  width: 70%;
+  background: #fff;
+}
+
+.side {
+  padding: 0 8px;
+  width: 30%;
+  background: rgba(232, 242, 255, 100%);
+}
+
+.avatar {
+  padding: 4px 0 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar img {
+  border-radius: 50%;
+}
+
+.social {
+  padding: 0 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.social svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 600px) {
+  .section {
+    flex-direction: column;
+  }
+
+  .main {
+    padding: 0;
+    width: 100%;
+  }
+
+  .side {
+    position: static;
+    padding: 0;
+    width: 100%;
+  }
+}
