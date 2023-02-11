@@ -9,7 +9,8 @@
   color: #2c2e2f;
   text-decoration: none;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: space-between;
   vertical-align: middle;
 }
@@ -25,23 +26,11 @@
   font-weight: 600;
 }
 
-.grid h3 {
+.grid p {
   margin: 0;
   text-align: left;
   font-size: 1rem;
   font-weight: 400;
-}
-
-.grid p {
-  text-align: left;
-  font-size: 0.96rem;
-  font-weight: 300;
-}
-
-.grid .tags,
-.grid .created_at {
-  display: flex;
-  justify-content: flex-end;
 }
 
 .post-detail .footer-area {

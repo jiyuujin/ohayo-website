@@ -1,15 +1,15 @@
 <template>
   <div aria-label="Blog post list">
     <div v-for="issue in issues" :key="issue.id" class="grid">
-      <h2>{{ currentDateLabelText(issue.createdAt) }}</h2>
-      <h3 v-if="headlines(issue.timelineItems)">
-        <router-link
-          :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
-          :title="`${currentDateLabelText(issue.createdAt)}の記事を見る`"
-        >
+      <router-link
+        :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
+        :title="`${currentDateLabelText(issue.createdAt)}の記事を見る`"
+      >
+        <h2>{{ currentDateLabelText(issue.createdAt) }}</h2>
+        <p v-if="headlines(issue.timelineItems)">
           {{ headlines(issue.timelineItems) }}
-        </router-link>
-      </h3>
+        </p>
+      </router-link>
     </div>
   </div>
 </template>
