@@ -16,7 +16,9 @@ const issues = computed(() => {
 </script>
 
 <template>
-  <nav-text />
+  <div :style="{ background: '#fff' }">
+    <nav-text />
+  </div>
   <div class="content">
     <section v-if="loading">
       {{ `Loading...` }}
