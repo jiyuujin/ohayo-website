@@ -1,27 +1,15 @@
 <template>
   <div aria-label="Blog post list">
     <div v-for="issue in issues" :key="issue.id" class="grid">
-      <router-link
-        v-if="headlines(issue.timelineItems) !== ''"
-        :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
-        :title="`${currentDateLabelText(issue.createdAt)}の記事を見る`"
-      >
-        <div aria-label="Post title">
-          <h2>{{ headlines(issue.timelineItems) }}</h2>
-        </div>
-        <div aria-label="Post information">
-          <div class="tags">
-            <span v-for="label in issue.labels.nodes" :key="label.id" class="tag">
-              <router-link :to="`/tag/${label.name}`" :title="label.name">
-                {{ label.name }}
-              </router-link>
-            </span>
-          </div>
-          <div class="created_at">
-            {{ currentDateLabelText(issue.createdAt) }}
-          </div>
-        </div>
-      </router-link>
+      <h2>{{ currentDateLabelText(issue.createdAt) }}</h2>
+      <h3 v-if="headlines(issue.timelineItems)">
+        <router-link
+          :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
+          :title="`${currentDateLabelText(issue.createdAt)}の記事を見る`"
+        >
+          {{ headlines(issue.timelineItems) }}
+        </router-link>
+      </h3>
     </div>
   </div>
 </template>

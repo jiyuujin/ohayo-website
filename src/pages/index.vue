@@ -31,14 +31,3 @@ const issues = computed(() => {
   </div>
   <footer-text />
 </template>
-
-<style>
-.content {
-  margin-top: 4rem;
-  margin-bottom: 8rem;
-}
-
-.content :global(main > * + *) {
-  margin-top: 1rem;
-}
-</style>
