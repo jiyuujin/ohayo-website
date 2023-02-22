@@ -26,6 +26,15 @@ const allIcons = [
   { name: 'note', url: 'https://note.com/uraneko' },
   { name: 'twitter', url: 'https://twitter.com/jiyuujinlab' },
 ]
+
+onMounted(() => {
+  setTimeout(() => {
+    let tweetScript = document.createElement('script')
+    tweetScript.setAttribute('src', 'https://platform.twitter.com/widgets.js')
+    tweetScript.setAttribute('async', 'true')
+    document.head.appendChild(tweetScript)
+  }, 100)
+})
 </script>
 
 <template>
