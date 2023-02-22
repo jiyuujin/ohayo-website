@@ -73,6 +73,25 @@ onMounted(() => {
           </template>
         </a>
       </div>
+      <div class="friday">
+        <a
+          href="https://ohayo-friday.nekohack.me/"
+          target="_blank"
+          rel="noopenner noreferrer"
+          title="金曜日のエンジニアのつどい"
+        >
+          <p class="title">
+            金曜日のエンジニアのつどい
+          </p>
+          <p class="subtitle">
+            Every Friday AM9:00
+            <br />
+            Twitter Space
+            <br />
+            ON AIR
+          </p>
+        </a>
+      </div>
     </div>
   </div>
   <footer-text />

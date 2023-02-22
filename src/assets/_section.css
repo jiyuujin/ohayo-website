@@ -41,6 +41,39 @@
   height: 24px;
 }
 
+.friday {
+  border: 1px solid rgba(192, 232, 255, 100%);
+  border-radius: 16px;
+}
+
+.friday a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.friday a .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.44rem;
+  font-weight: 600;
+  height: 120px;
+  color: #3d3d3d;
+}
+
+.friday a .subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.08rem;
+  font-weight: 400;
+  height: 40px;
+  color: #3d3d3d;
+  text-align: center;
+}
+
 @media (max-width: 600px) {
   .section {
     flex-direction: column;
