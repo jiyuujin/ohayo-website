@@ -4,6 +4,7 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
+    "noImplicitAny": false,
     "strict": true,
     "declaration": true,
     "noUnusedLocals": true,

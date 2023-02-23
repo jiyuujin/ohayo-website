@@ -20,16 +20,12 @@
     "test:w": "npm run test-cover -- --watch"
   },
   "dependencies": {
-    "@apollo/client": "3.3.8",
+    "@apollo/client": "3.7.9",
     "@nekohack/normalize.css": "^2.7.0",
     "@nekohack/profile-ui": "jiyuujin/profile-ui.git#92c8c720465ab35da150d065ff310b7fa1cd8254",
-    "@vue/apollo-composable": "4.0.0-alpha.14",
+    "@vue/apollo-composable": "4.0.0-beta.4",
     "@vueuse/core": "^6.7.3",
     "@vueuse/head": "^0.6.0",
-    "apollo-cache-inmemory": "1.6.6",
-    "apollo-client": "2.6.10",
-    "apollo-link": "1.2.14",
-    "apollo-link-http": "1.5.17",
     "dayjs": "^1.10.7",
     "graphql": "^15.5.0",
     "graphql-tag": "^2.11.0",
