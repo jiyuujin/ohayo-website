@@ -16,7 +16,7 @@ module.exports = {
     'vue/multi-word-component-names': [
       'error',
       {
-        ignores: ['index', 'Pagination', '[...all]', 'default', '404']
+        ignores: ['index', '[...all]', 'default', '404']
       }
     ]
   }
