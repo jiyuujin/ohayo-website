@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  gap: 10px;
+  gap: 20px;
   grid-template-columns: repeat(auto, 1fr, auto);
   padding: 12px 0;
 }
@@ -13,6 +13,8 @@
   align-items: flex-start;
   justify-content: space-between;
   vertical-align: middle;
+  border-left: 3px solid #fff;
+  padding-left: 1em;
 }
 
 .grid a:visited {
@@ -22,12 +24,12 @@
 .grid h2 {
   margin: 0;
   text-align: left;
-  font-size: 1.08rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
 .grid p {
-  margin: 0;
+  margin-bottom: 0;
   text-align: left;
   font-size: 1rem;
   font-weight: 400;
