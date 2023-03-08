@@ -5,10 +5,13 @@
         :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
         :title="`${currentDateLabelText(issue.createdAt)}の記事を見る`"
       >
-        <h2>{{ currentDateLabelText(issue.createdAt) }}</h2>
-        <p v-if="headlines(issue.timelineItems)">
-          {{ headlines(issue.timelineItems) }}
-        </p>
+        <h2>
+          {{ `${currentDateLabelText(issue.createdAt)}` }}
+          <span v-if="headlines(issue.timelineItems)">
+            {{ `: ${headlines(issue.timelineItems)}` }}
+          </span>
+        </h2>
+        <p>{{ currentDateLabelText(issue.createdAt) }}</p>
       </router-link>
     </div>
   </div>
