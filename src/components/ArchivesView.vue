@@ -11,7 +11,14 @@
             {{ `: ${headlines(issue.timelineItems)}` }}
           </span>
         </h2>
-        <p>{{ currentDateLabelText(issue.createdAt) }}</p>
+        <p>
+          <span v-for="label in issue.labels.nodes" :key="label.id" class="tag">
+            <router-link :to="`/tag/${label.name}`" :title="label.name">
+              {{ label.name }}
+            </router-link>
+          </span>
+          {{ currentDateLabelText(issue.createdAt) }}
+        </p>
       </router-link>
     </div>
   </div>

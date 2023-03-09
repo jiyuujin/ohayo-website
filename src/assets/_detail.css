@@ -31,8 +31,35 @@
 .grid p {
   margin-bottom: 0;
   text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-size: 1rem;
   font-weight: 400;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0 7px;
+  margin-right: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #2c2e2f;
+  background-color: transparent;
+  border: 1px solid #30363d;
+  border-radius: 2em;
+}
+
+.tag a {
+  color: #2c2e2f;
+  text-decoration: none;
+  padding: 0;
+  border: none;
+}
+
+.tag a:visited {
+  color: #2c2e2f;
 }
 
 .post-detail .footer-area {
