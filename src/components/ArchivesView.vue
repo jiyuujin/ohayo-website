@@ -1,14 +1,16 @@
 <template>
-  <div aria-label="Blog post list">
-    <div v-for="issue in issues" :key="issue.id" class="grid">
+  <div class="grid" aria-label="Blog post list">
+    <div v-for="issue in issues" :key="issue.id">
       <router-link
         :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
         :title="`${currentDateLabelText(issue.createdAt)}の記事を見る`"
       >
-        <h2>
+        <div class="date">
           {{ `${currentDateLabelText(issue.createdAt)}` }}
+        </div>
+        <h2>
           <span v-if="headlines(issue.timelineItems)">
-            {{ `: ${headlines(issue.timelineItems)}` }}
+            {{ `${headlines(issue.timelineItems)}` }}
           </span>
         </h2>
         <p>
@@ -17,7 +19,6 @@
               {{ label.name }}
             </router-link>
           </span>
-          {{ currentDateLabelText(issue.createdAt) }}
         </p>
       </router-link>
     </div>

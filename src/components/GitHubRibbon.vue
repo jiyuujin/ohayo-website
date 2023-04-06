@@ -43,7 +43,7 @@ a::after {
   height: 1px;
 }
 
-@media screen and (min-width:800px) {
+@media screen and (min-width: 600px) {
   a {
     position: fixed;
     display: block;

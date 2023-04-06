@@ -1,8 +1,18 @@
+.content {
+  padding: 8px 16px;
+  max-width: 1246px;
+  margin: 0 auto;
+}
+
 .grid {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto, 1fr, auto);
-  padding: 12px 0;
+  padding: 8px 16px;
+}
+
+.grid {
+  border-bottom: 1px solid #e6f6f5;
 }
 
 .grid a {
@@ -13,19 +23,28 @@
   align-items: flex-start;
   justify-content: space-between;
   vertical-align: middle;
-  border-left: 3px solid #fff;
-  padding-left: 1em;
+}
+
+.grid a:hover {
+  opacity: 0.6;
 }
 
 .grid a:visited {
   color: #2c2e2f;
 }
 
+.grid .date {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+}
+
 .grid h2 {
   margin: 0;
   text-align: left;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.2;
 }
 
 .grid p {
@@ -34,8 +53,8 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 .tag {
@@ -92,4 +111,14 @@
 
 .participant_wrapper img {
   width: 32px;
+}
+
+@media(min-width: 1024px) {
+  .content {
+    padding: 40px 40px;
+  }
+
+  .grid {
+    padding: 8px 48px;
+  }
 }
