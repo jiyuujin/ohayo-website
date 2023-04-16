@@ -15,6 +15,12 @@
   border-bottom: 1px solid #e6f6f5;
 }
 
+.item {
+  border-radius: 10px;
+  padding: 24px 0;
+  text-align: left;
+}
+
 .grid a {
   color: #2c2e2f;
   text-decoration: none;
@@ -115,6 +121,7 @@
 
 @media(min-width: 1024px) {
   .content {
+    /*padding: 160px 40px;*/
     padding: 40px 40px;
   }
 

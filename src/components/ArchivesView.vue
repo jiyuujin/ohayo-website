@@ -1,6 +1,6 @@
 <template>
   <div class="grid" aria-label="Blog post list">
-    <div v-for="issue in issues" :key="issue.id">
+    <div v-for="issue in issues" :key="issue.id" class="item">
       <router-link
         :to="`/posts/${currentDateFormatText(issue.createdAt)}`"
         :title="`${currentDateLabelText(issue.createdAt)}の記事を見る`"

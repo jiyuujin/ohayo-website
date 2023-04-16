@@ -34,23 +34,21 @@ const changePage = (value: number) => {
   <div :style="{ background: '#fff' }">
     <nav-text />
   </div>
-  <section v-if="loading">
+  <div v-if="loading">
     {{ `Loading...` }}
-  </section>
-  <section v-else-if="error">
+  </div>
+  <div v-else-if="error">
     {{ `Error` }}
-  </section>
-  <section v-else>
-    <div class="content">
-      <archives-view :data="displayIssues" />
-      <pagination
-        :current-page="currentPage"
-        :total-page="totalPage"
-        :per-page="perPage"
-        @change-page="changePage"
-      />
-      <maintainer-view />
-    </div>
-  </section>
+  </div>
+  <div v-else class="content">
+    <archives-view :data="displayIssues" />
+    <pagination
+      :current-page="currentPage"
+      :total-page="totalPage"
+      :per-page="perPage"
+      @change-page="changePage"
+    />
+    <maintainer-view />
+  </div>
   <footer-text />
 </template>
