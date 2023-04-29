@@ -1,0 +1,46 @@
+{
+  "name": "@nekohack/ai-app",
+  "description": "",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run build:feeds && npm run build:front",
+    "build:front": "astro build",
+    "build:feeds": "node --loader ts-node/esm scripts/feeds.mjs",
+    "build:og-gen": "node --loader ts-node/esm scripts/generate.mjs",
+    "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,sass}\" --ignore-path .gitignore",
+    "lint": "npm run eslint && npm run textlint",
+    "lint:fix": "npm run eslint:fix && npm run textlint:fix",
+    "eslint": "eslint . --ext js,jsx,ts,tsx,astro",
+    "eslint:fix": "eslint . --ext js,jsx,ts,tsx,astro --fix",
+    "textlint": "textlint ./src/pages/posts/**",
+    "textlint:fix": "textlint ./src/pages/posts/** --fix"
+  },
+  "dependencies": {
+    "svelte": "3.56.0",
+    "vue": "3.2.47"
+  },
+  "devDependencies": {
+    "@astrojs/image": "0.16.6",
+    "@astrojs/react": "2.1.1",
+    "@astrojs/svelte": "2.1.0",
+    "@astrojs/vue": "2.1.1",
+    "astro-vanilla-extract": "2.0.0",
+    "astro": "2.3.0",
+    "feed": "4.2.2",
+    "front-matter": "4.0.2",
+    "fs-extra": "11.1.1",
+    "puppeteer": "19.10.1",
+    "rehype-toc": "3.0.2",
+    "remark-frontmatter": "4.0.1",
+    "remark-parse": "10.0.1",
+    "remark-stringify": "10.0.2",
+    "remark-toc": "8.0.1",
+    "sass": "1.62.0",
+    "sharp": "0.31.3",
+    "to-vfile": "7.2.4",
+    "ts-node": "10.9.1",
+    "unified": "10.1.2"
+  }
+}

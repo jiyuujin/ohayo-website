@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "types": ["@astrojs/image/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@ohayo/react-ui": ["../../packages/react-ui/src/index.ts"]
+    }
+  }
+}

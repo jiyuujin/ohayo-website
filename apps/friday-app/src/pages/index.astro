@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content'
+
+import { Post } from '@ohayo/react-ui'
+
+import BaseHead from '../components/BaseHead.astro'
+import BlogHeader from '../components/BlogHeader.astro'
+import BlogFooter from '../components/BlogFooter.astro'
+import GitHubRibbon from '../components/GitHubRibbon.vue'
+
+let title = '金曜日のエンジニアのつどい'
+let description = '週刊でエンジニア界隈の最新情報を記録しています'
+let permalink = 'https://ohayo-friday.nekohack.me/'
+let author = 'jiyuujin'
+
+const allPosts = (await getCollection('posts')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+)
+---
+
+<html lang="en">
+  <head>
+    <BaseHead {title} {description} {permalink} />
+    <style>
+      .header {
+        z-index: 199;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        transition: 200ms;
+      }
+
+      .content {
+        padding: 8px 16px;
+        max-width: 1246px;
+        margin: 0 auto;
+      }
+
+      .grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto, 1fr, auto);
+        padding: 8px 16px;
+      }
+
+      @media(min-width: 1024px) {
+        .content {
+          /*padding: 160px 40px;*/
+          padding: 40px 40px;
+        }
+
+        .grid {
+          padding: 8px 48px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <GitHubRibbon />
+    <div class="header">
+      <BlogHeader title={title} description={description} />
+    </div>
+    <div class="content">
+      <h2>投稿の一覧</h2>
+      <div class="grid" aria-label="Blog post list">
+        {allPosts.map((p) =>
+          <Post
+            url={`/posts/${p.slug}`}
+            date={p.data.title}
+            title={p.data.explain}
+          />
+        )}
+      </div>
+    </div>
+    <div class="footer">
+      <BlogFooter {author} />
+    </div>
+  </body>
+</html>

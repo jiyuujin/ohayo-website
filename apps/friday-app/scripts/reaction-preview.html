@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>OG Image</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=840,height=840" />
+    <style>
+      body,
+      h1 {
+        margin: 0;
+      }
+
+      :root {
+        --font-color: #303030;
+        --og-width: 840px;
+        --og-height: 840px;
+        --og-padding: 60px;
+        --og-inner-padding: 30px;
+        --og-inner-height: calc(var(--og-height) - var(--og-padding) * 2);
+        --og-inner-width: calc(var(--og-width) - var(--og-padding) * 2);
+      }
+
+      .root {
+        width: var(--og-inner-width);
+        height: var(--og-inner-height);
+        padding: var(--og-padding);
+      }
+
+      .main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        width: calc(var(--og-inner-width) - var(--og-inner-padding) * 2);
+        height: calc(var(--og-inner-height) - var(--og-inner-padding) * 2);
+        padding: var(--og-inner-padding);
+        color: var(--font-color);
+        background-color: white;
+        border-radius: 25px;
+      }
+
+      .title {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div class="main">
+        <h1 id="title" class="title"></h1>
+      </div>
+    </div>
+    <script>
+      function setTitleFontSize(fontSize = 512) {
+        const titleElement = document.querySelector('.title')
+        titleElement.style.fontSize = fontSize + 'px'
+        const titleHeight = titleElement.getBoundingClientRect().height
+        if (!(titleHeight <= 300)) {
+          setTitleFontSize(--fontSize)
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', async () => {
+        setTitleFontSize()
+      })
+    </script>
+  </body>
+</html>

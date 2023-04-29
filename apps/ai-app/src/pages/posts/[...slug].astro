@@ -1,0 +1,116 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content'
+import { Image } from '@astrojs/image/components'
+
+import { Post } from '@ohayo/react-ui'
+
+import BaseHead from '../../components/BaseHead.astro'
+import BlogHeader from '../../components/BlogHeader.astro'
+import BlogFooter from '../../components/BlogFooter.astro'
+import GitHubRibbon from '../../components/GitHubRibbon.vue'
+
+import '../../assets/lib/customize/_article.scss'
+import '../../assets/lib/customize/_twitter.scss'
+import '../../assets/lib/_layout.scss'
+import '../../assets/player.scss'
+import '../../assets/reset.scss'
+import '../../assets/section.scss'
+import '../../assets/summary.scss'
+
+interface Props {
+  post: CollectionEntry<"posts">
+}
+
+let allIcons = [
+  { name: 'github', url: 'https://github.com/jiyuujin' },
+  // { name: 'hatena', url: 'https://hatena.ne.jp/' },
+  // { name: 'note', url: 'https://note.com/uraneko' },
+  { name: 'twitter', url: 'https://twitter.com/jiyuujinlab' },
+]
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts')
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: {
+      allPosts: posts,
+      post,
+    },
+  }))
+}
+
+const { allPosts, post } = Astro.props
+const { slug, data: { title, explain, author } } = post
+const { Content, headings } = await post.render()
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <BaseHead
+      {title}
+      description={explain}
+      permalink={`https://ohayo-ai.nekohack.me/posts${slug}`}
+      image={`https://ohayo-ai.nekohack.me/og/${slug}.png`}
+    />
+    <style>
+      body {
+        background: rgba(167, 123, 243, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <GitHubRibbon />
+    <main>
+      <div class="header">
+        <BlogHeader {title} description={explain} />
+      </div>
+      <Post.Content>
+        <div class="article">
+          <div class="post-detail">
+            <div style={{ textAlign: "left" }}>
+              <div class="headline">{explain}</div>
+            </div>
+            <p style={{ margin: 0 }}>それでは、先週の主なアップデートについて振り返っていきましょう。</p>
+            {headings.filter((h) => h.depth === 3).length !== 0 && (
+              <div aria-label="Blog toc">
+                <details class="grid">
+                  <summary>目次</summary>
+                  {headings
+                    .filter((h) => h.depth === 3)
+                    .map((h) => (
+                      <p style={{ margin: 0 }}>
+                        <a href={`/posts/${slug}#${h.slug}`}>
+                          {h.text}
+                        </a>
+                      </p>
+                    ))}
+                </details>
+              </div>
+            )}
+            <Content />
+          </div>
+        </div>
+      </Post.Content>
+      <div aria-label="Blog recent list">
+        <h2>最近 (直近 5 件) の投稿</h2>
+        <div class="grid">
+          {allPosts
+            .slice(0, 5)
+            .map((p) => (
+              <p>
+                <a href={`/posts/${p.slug}`}>
+                  {p.data.title}
+                </a>
+              </p>
+            ))}
+        </div>
+      </div>
+      <div class="footer">
+        <BlogFooter {author} />
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "name": "react-ui",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,vue,md,mdx,css,html,yml,yaml,scss,sass}\" --ignore-path .prettierignore",
+    "lint": "npm run eslint",
+    "lint:fix": "npm run eslint:fix",
+    "eslint": "eslint . --ext js,jsx,ts,tsx,vue --ignore-path .gitignore",
+    "eslint:fix": "eslint . --ext js,jsx,ts,tsx,vue --ignore-path .gitignore --fix",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "11.10.6",
+    "@emotion/react": "11.10.6",
+    "@storybook/addon-a11y": "7.0.6",
+    "@storybook/addon-essentials": "7.0.6",
+    "@storybook/addon-links": "7.0.6",
+    "@storybook/react": "7.0.6",
+    "@storybook/react-vite": "7.0.6",
+    "@types/react": "18.0.38",
+    "@types/react-dom": "18.0.11",
+    "@vanilla-extract/css": "1.11.0",
+    "@vanilla-extract/vite-plugin": "3.8.0",
+    "@vitejs/plugin-react": "3.1.0",
+    "storybook": "7.0.6",
+    "ts-pattern": "4.2.2",
+    "typescript": "5.0.4",
+    "vite": "4.2.2",
+    "vite-plugin-inspect": "0.7.24"
+  }
+}
