@@ -1,0 +1,126 @@
+/**
+ * normalize.css より移植
+ */
+
+.article {
+  margin: 2% 0 2% 0;
+  overflow: hidden;
+  color: #000;
+  text-align: left;
+
+  p {
+    padding-right: 16px;
+    font-size: 0.96rem;
+    color: #35495e;
+    text-align: left;
+  }
+
+  .post-detail {
+    color: #000;
+    text-align: center;
+    word-break: break-word;
+
+    h2 {
+      padding: 0.24em 0.48em;
+      margin: 8px 0;
+      font-size: 1.44rem;
+      color: #35495e;
+      text-align: left;
+      border-left: solid 5px #42b883;
+    }
+
+    h3 {
+      padding: 0.24em 0.48em;
+      margin: 8px 0;
+      font-size: 1.08rem;
+      color: #35495e;
+      text-align: left;
+      border-left: solid 5px #35495e;
+    }
+
+    h4 {
+      padding: 0.24em 0.48em;
+      margin: 8px 0;
+      font-size: 0.96rem;
+      color: #35495e;
+      text-align: left;
+      border-left: solid 5px #ccc;
+    }
+
+    p {
+      padding: 0.16em 0.24em;
+      line-height: 2;
+      color: #000;
+      text-align: left;
+    }
+
+    ol {
+      padding: 0 0 0 2em;
+      margin: 1em 0;
+      color: #35495e;
+      text-align: left;
+    }
+
+    ul {
+      padding: 0 0 0 2em;
+      margin: 1em 0;
+      color: #35495e;
+      text-align: left;
+      list-style: disc;
+    }
+
+    dd {
+      margin: 0 0 0 2em;
+    }
+
+    table {
+      margin: 10px 0 15px 0;
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      padding: 3px 10px;
+      border: 2px solid #ccb8a3;
+    }
+
+    th {
+      padding: 5px 10px;
+    }
+
+    code {
+      background-color: rgba(175, 184, 193, 0.4);
+    }
+
+    pre {
+      padding: 1.2rem 0.8rem;
+      overflow-x: scroll;
+      text-align: left;
+
+      code {
+        background: transparent;
+      }
+    }
+
+    img {
+      width: 80%;
+      margin: 0 10%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .article {
+    width: 88%;
+    margin: 2% 6% 2% 6%;
+    overflow: hidden;
+    text-align: center;
+
+    .post-detail {
+      img {
+        width: 84%;
+        margin: 0 8%;
+      }
+    }
+  }
+}

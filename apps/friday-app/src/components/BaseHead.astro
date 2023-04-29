@@ -1,0 +1,49 @@
+---
+export type Props = {
+  title: string
+  description: string
+  permalink: string
+  image?: string
+}
+
+const { title = '金曜日のエンジニアのつどい', description, permalink, image } = Astro.props;
+---
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nekohack/normalize.css/dist/index.css" />-->
+
+<title>{title}</title>
+<meta name="title" content={title}/>
+{description && <meta name="description" content={description}/>}
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="shortcut icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+
+<meta httpEquiv="X-UA-Compatible" content="IE=edge"  />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="msapplication-config" content="/browserconfig.xml"/>
+<meta name="theme-color" content="#ffffff" />
+
+<!-- Open Graph Tags (Facebook) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+{permalink && <meta property="og:url" content={permalink} />}
+{description && <meta property="og:description" content={description} />}
+{image && <meta property="og:image" content={image} />}
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:title" content={title} />
+{permalink && <meta property="twitter:url" content={permalink} />}
+{description && <meta property="twitter:description" content={description} />}
+{image && <meta property="twitter:image" content={image} />}
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap" />

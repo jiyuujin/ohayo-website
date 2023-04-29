@@ -1,0 +1,57 @@
+---
+const { currentPage, totalPage } = Astro.props;
+
+const isCurrentPage = (value: number) => {
+  return value === parseInt(currentPage);
+}
+---
+
+<script>
+  const buttons = document.querySelectorAll('[data-pagination-button]');
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      location.href = `/?page=${index + 1}`;
+    });
+  });
+</script>
+<div class="pagination">
+  {Array.from({ length: parseInt(totalPage) }).map((_, n) => (
+    <button
+      data-pagination-button
+      class={isCurrentPage(n + 1) ? 'active' : ''}
+    >
+      {n + 1}
+    </button>
+  ))}
+</div>
+
+<style>
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  button {
+    background: #3d3d3d;
+    color: #fff;
+    border: none;
+    box-shadow: 2px 2px 4px #0f83fd;
+    backdrop-filter: blur(28px);
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 8px;
+    margin: 0;
+    transition: width 1s ease-in-out;
+    width: 36px;
+    height: 36px;
+  }
+
+  .active {
+    background: #0f83fd;
+  }
+</style>

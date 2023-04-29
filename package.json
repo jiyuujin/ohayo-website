@@ -1,111 +1,36 @@
 {
-  "name": "@nekohack/ohayo-front",
-  "version": "0.0.0",
-  "description": "",
-  "author": "yuukit <yuma.kitamura@ponos.co.jp>",
+  "name": "ohayo-website",
+  "version": "0.1.0",
   "private": true,
+  "workspaces": ["packages/*", "apps/*"],
   "scripts": {
-    "dev": "vite",
-    "build": "npm run build:server && npm run build:front",
-    "build:server": "yarn workspace @nekohack/ohayo-server build",
-    "build:front": "vite build",
-    "build:ssg": "vite-ssg build",
-    "build:og-gen": "ts-node --project tsconfig.builder.json scripts/og-gen.ts",
-    "deploy": "yarn workspace @nekohack/ohayo-server deploy",
-    "lint": "npm run lint:server && npm run lint:front",
-    "lint:server": "yarn workspace @nekohack/ohayo-server lint --fix",
-    "lint:front": "eslint ./ --ext ts,vue --fix",
-    "test": "jest",
-    "test-cover": "jest --coverage",
-    "test:w": "npm run test-cover -- --watch"
-  },
-  "dependencies": {
-    "@apollo/client": "3.3.8",
-    "@nekohack/normalize.css": "^2.7.0",
-    "@nekohack/profile-ui": "jiyuujin/profile-ui.git#92c8c720465ab35da150d065ff310b7fa1cd8254",
-    "@vue/apollo-composable": "4.0.0-alpha.14",
-    "@vueuse/core": "^6.7.3",
-    "@vueuse/head": "^0.6.0",
-    "apollo-cache-inmemory": "1.6.6",
-    "apollo-client": "2.6.10",
-    "apollo-link": "1.2.14",
-    "apollo-link-http": "1.5.17",
-    "dayjs": "^1.10.7",
-    "graphql": "^15.5.0",
-    "graphql-tag": "^2.11.0",
-    "markdown-it": "^12.2.0",
-    "markdown-it-attrs": "^4.1.0",
-    "markdown-it-container": "^3.0.0",
-    "markdown-it-link-attributes": "^3.0.0",
-    "markdown-it-video": "^0.6.3",
-    "ts-node": "^10.4.0",
-    "vue": "^3.1.1",
-    "vue-router": "^4.0.12"
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "build:ssg": "turbo run build:ssg",
+    "format": "turbo run format",
+    "lint": "turbo run lint",
+    "storybook": "turbo run storybook",
+    "build-storybook": "turbo run build-storybook"
   },
   "devDependencies": {
-    "@nekohack/eslint-config-vue": "^1.1.0",
-    "@types/jest": "^26.0.14",
-    "@types/node": "^18.6.4",
-    "@typescript-eslint/eslint-plugin": "^3.9.1",
-    "@typescript-eslint/parser": "^3.9.1",
-    "@vitejs/plugin-vue": "^1.2.3",
-    "@vue/compiler-sfc": "^3.1.1",
-    "@vue/server-renderer": "^3.2.20",
-    "@vue/test-utils": "^2.0.0-beta.6",
-    "@vueuse/head": "^0.6.0",
-    "autoprefixer": "^10.4.13",
-    "babel-jest": "^26.3.0",
-    "eslint": "^7.7.0",
-    "isomorphic-unfetch": "^3.1.0",
-    "jest": "^26.4.2",
-    "puppeteer": "^10.4.0",
-    "sass": "^1.57.1",
-    "ts-jest": "^26.4.1",
-    "typescript": "^3.9.7",
-    "unplugin-auto-import": "^0.4.13",
-    "vite": "^2.3.7",
-    "vite-plugin-pages": "^0.18.1",
-    "vite-plugin-vue-layouts": "^0.5.0",
-    "vite-ssg": "^0.15.5",
-    "vite-svg-loader": "^2.2.0",
-    "vue-jest": "^5.0.0-alpha.4"
+    "@nekohack/eslint-config-vue": "1.1.0",
+    "@typescript-eslint/eslint-plugin": "5.59.1",
+    "@typescript-eslint/parser": "5.59.1",
+    "eslint": "8.39.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-astro": "0.26.1",
+    "eslint-plugin-vue": "9.11.0",
+    "prettier": "2.8.8",
+    "prettier-plugin-astro": "0.8.0",
+    "textlint": "12.5.1",
+    "textlint-rule-preset-ja-technical-writing": "^7.0.0",
+    "textlint-rule-preset-nekohack-inc": "git+https://github.com/nekohack/textlint-rule-preset-nekohack-inc.git",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0",
+    "turbo": "1.5.5"
   },
-  "jest": {
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig.test.json"
-      }
-    },
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "ts",
-      "tsx",
-      "vue",
-      "json",
-      "node"
-    ],
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1",
-      "^~/(.*)$": "<rootDir>/src/$1"
-    },
-    "testMatch": [
-      "<rootDir>/tests/*.spec.ts?(x)"
-    ],
-    "preset": "ts-jest",
-    "transform": {
-      "^.+\\js$": "babel-jest",
-      "^.+\\.vue$": "vue-jest"
-    },
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules"
-    ]
+  "engines": {
+    "yarn": ">=1.22.0",
+    "node": ">=14.0.0"
   },
-  "workspaces": [
-    "*",
-    "server/*"
-  ]
+  "packageManager": "yarn@1.22.19"
 }

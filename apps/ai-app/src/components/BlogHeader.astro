@@ -1,0 +1,39 @@
+---
+const { title } = Astro.props
+---
+
+<div class="header">
+  <h1 class="latest" title={title ? title : 'AIer.info'}>
+    {title ? title : 'AIer.info'}
+  </h1>
+</div>
+
+<style>
+  .latest {
+    background: linear-gradient(300deg, #93f5ec 20%, #a77bf3 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    white-space: nowrap;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .header {
+    display: grid;
+    place-items: center;
+    height: 120px;
+  }
+
+  .header > * {
+    margin: 0;
+  }
+
+  @media(min-width: 768px) {
+    .latest {
+      font-size: 2.4rem;
+    }
+  }
+</style>

@@ -1,0 +1,28 @@
+---
+const { author } = Astro.props
+---
+
+<div class="footer">
+  <h2 class="copyright">{`Copyright ©︎ 2023 ${author} All rights reserved.`}</h2>
+</div>
+
+<style>
+  .copyright {
+    padding: 0;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    gap: 12px;
+  }
+
+  .footer > * {
+    margin: 0;
+  }
+</style>

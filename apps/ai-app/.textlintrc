@@ -1,0 +1,20 @@
+{
+  "filters": {},
+  "rules": {
+    "preset-nekohack-inc": true,
+    "preset-ja-technical-writing": {
+      "sentence-length": {
+        "max": 180
+      },
+      "max-comma": {
+        "max": 8
+      }
+    },
+    "ja-technical-writing/max-kanji-continuous-len": {
+      max: 8
+    },
+    "ja-technical-writing/no-exclamation-question-mark": false,
+    "ja-technical-writing/ja-no-weak-phrase": false,
+    "spellcheck-tech-word": true
+  }
+}

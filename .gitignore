@@ -11,3 +11,19 @@ coverage
 .env
 
 .vite-ssg-temp
+
+.astro
+
+# turbo
+.turbo
+
+.idea
+
+apps/ai-app/public/feeds.xml
+apps/general-app/public/feeds.xml
+
+#apps/ai-app/public/og/*.png
+#apps/general-app/public/og/*.png
+
+#!apps/ai-app/public/og/top.png
+#!apps/general-app/public/og/top.png
