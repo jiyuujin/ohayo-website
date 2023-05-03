@@ -12,7 +12,12 @@
       "vite/client",
       "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@ohayo/react-ui": ["../../packages/react-ui/src/index.ts"],
+      "@ohayo/vue-ui": ["../../packages/vue-ui/src/index.ts"]
+    }
   },
   "include": [
     "./**/*.vue",

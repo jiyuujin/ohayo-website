@@ -5,7 +5,8 @@
     "types": ["@astrojs/image/client"],
     "baseUrl": ".",
     "paths": {
-      "@ohayo/react-ui": ["../../packages/react-ui/src/index.ts"]
+      "@ohayo/react-ui": ["../../packages/react-ui/src/index.ts"],
+      "@ohayo/vue-ui": ["../../packages/vue-ui/src/index.ts"]
     }
   }
 }

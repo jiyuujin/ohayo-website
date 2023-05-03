@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import GitHubRibbon from '../components/GitHubRibbon.vue'
+// FIXME: use vue-ui paths
+// import { GitHubRibbon } from '@ohayo/vue-ui'
+import { GitHubRibbon } from '../../../../packages/vue-ui/src/index'
 </script>
 
 <template>
