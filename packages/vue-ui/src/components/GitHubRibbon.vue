@@ -1,10 +1,6 @@
 <!-- https://github.blog/2008-12-19-github-ribbons/ -->
 <template>
-  <a
-    href="https://github.com/jiyuujin/ohayo-friday"
-    target="_blank"
-    rel="noopenner noreferrer"
-  >
+  <a href="https://github.com/jiyuujin/ohayo-friday" target="_blank" rel="noopenner noreferrer">
     <img
       width="149"
       height="149"
