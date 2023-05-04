@@ -1,6 +1,8 @@
 # ohayo-website
 
+- [Astro](https://astro.build/)
 - [Vite](https://vitejs.dev/)
+- [Svelte](https://svelte.jp/)
 - Vue [en](https://vuejs.org/) / [ja](https://ja.vuejs.org)
 - [GitHub API v4](https://docs.github.com/ja/graphql) (GraphQL)
 
