@@ -5,9 +5,9 @@
 }
 
 .grid {
-  display: grid;
+  /* display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto, 1fr, auto);
+  grid-template-columns: repeat(auto, 1fr, auto); */
   padding: 8px 16px;
 }
 
