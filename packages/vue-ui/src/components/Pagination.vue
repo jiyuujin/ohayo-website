@@ -1,9 +1,10 @@
 <template>
   <div class="pagination">
     <button
-      v-for="n in totalPage" :key="n" 
+      v-for="n in totalPage"
+      :key="n"
       :class="{ active: isCurrentPage(n) }"
-      @click="event => changePage(event, n)"
+      @click="(event) => changePage(event, n)"
     >
       {{ n }}
     </button>
@@ -15,15 +16,15 @@ export default {
   props: {
     currentPage: {
       type: Number,
-      default: 1
+      default: 1,
     },
     totalPage: {
       type: Number,
-      default: 1
+      default: 1,
     },
     perPage: {
       type: Number,
-      default: 1
+      default: 1,
     },
   },
   setup(props, ctx) {
@@ -34,7 +35,7 @@ export default {
       ctx.emit('change-page', value)
     }
     return { isCurrentPage, changePage }
-  }
+  },
 }
 </script>
 
