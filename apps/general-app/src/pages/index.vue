@@ -2,8 +2,11 @@
 import { useQuery } from '@vue/apollo-composable'
 import { searchQuery } from '../graphql/issue'
 
+// FIXME: use vue-ui
+// import { Pagination } from '@ohayo/vue-ui'
+import { Pagination } from '../../../../packages/vue-ui/src/index'
+
 import ArchivesView from '../components/ArchivesView.vue'
-import Pagination from '../components/Pagination.vue'
 import FooterText from '../components/FooterText.vue'
 import NavText from '../components/NavText.vue'
 import MaintainerView from '../components/MaintainerView.vue'
