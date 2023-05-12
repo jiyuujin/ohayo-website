@@ -39,7 +39,7 @@ jobs:
 
     - name: Transpile
       run: |
-        npm install
-        npm run build:ssg --if-present
+        yarn
+        yarn build:ssg --if-present
       env:
         CI: true
