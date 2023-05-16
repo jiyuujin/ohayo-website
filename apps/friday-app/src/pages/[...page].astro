@@ -7,15 +7,31 @@ import { GitHubRibbon } from '@ohayo/vue-ui'
 import BaseHead from '../components/BaseHead.astro'
 import BlogHeader from '../components/BlogHeader.astro'
 import BlogFooter from '../components/BlogFooter.astro'
+import PaginationBase from '../components/PaginationBase.astro'
 
 let title = '金曜日のエンジニアのつどい'
 let description = '週刊でエンジニア界隈の最新情報を記録しています'
 let permalink = 'https://ohayo-friday.nekohack.me/'
 let author = 'jiyuujin'
 
-const allPosts = (await getCollection('posts')).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime()
-)
+const allPosts = await getCollection('posts')
+const allPostsSize = allPosts.length
+
+const PAGENATE = 5
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('posts')
+  const formattedPosts = allPosts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime()).reverse()
+  const PAGENATE = 5
+
+  return paginate(formattedPosts, {
+    pageSize: PAGENATE,
+  })
+}
+
+const { page } = Astro.props
+
+const origin = Astro.url.origin
 ---
 
 <html lang="en">
@@ -44,6 +60,10 @@ const allPosts = (await getCollection('posts')).sort(
         padding: 8px 16px;
       }
 
+      .pagination-wrapper {
+        padding: 8px 0;
+      }
+
       @media(min-width: 1024px) {
         .content {
           /*padding: 160px 40px;*/
@@ -65,13 +85,21 @@ const allPosts = (await getCollection('posts')).sort(
     <div class="content">
       <h2>投稿の一覧</h2>
       <div class="grid" aria-label="Blog post list">
-        {allPosts.map((p) =>
+        {page.data.map((p) =>
           <Post
             url={`/posts/${p.slug}`}
             date={p.data.title}
             title={p.data.explain}
           />
         )}
+      </div>
+      <div class="pagination-wrapper">
+        <PaginationBase
+          currentPage={page.currentPage}
+          totalPage={Math.ceil(allPostsSize / PAGENATE)}
+          perPage={PAGENATE}
+          firstUrl={origin}
+        />
       </div>
     </div>
     <div class="footer">
