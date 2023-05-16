@@ -1,0 +1,61 @@
+---
+import { Pagination } from '@ohayo/vue-ui'
+
+const VUEUI_USAGE = false
+
+const { currentPage, totalPage, perPage, firstUrl } = Astro.props
+const paginationList = Array.from({ length: `${totalPage}` }, (_, i) => i + 1)
+---
+
+{VUEUI_USAGE && (
+  <Pagination
+    currentPage={currentPage}
+    totalPage={totalPage}
+    perPage={perPage}
+  />
+)}
+{!VUEUI_USAGE && (
+  <div class="pagination">
+    {
+      paginationList.map((num) => (
+        <a href={`${firstUrl}${num == 1 ? "" : '/' + num}`} class={`pagination__link ${currentPage == num ? "active" : ""}`}>
+          {num}
+        </a>
+      ))
+    }
+  </div>
+)}
+
+<style>
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .pagination__link {
+    background: #3d3d3d;
+    color: #fff;
+    border: none;
+    box-shadow: 2px 2px 4px #0f83fd;
+    backdrop-filter: blur(28px);
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    /* padding: 8px; */
+    margin: 0;
+    transition: width 1s ease-in-out;
+    width: 36px;
+    height: 36px;
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+  }
+
+  .active {
+    background: #0f83fd;
+  }
+</style>
