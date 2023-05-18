@@ -20,7 +20,7 @@
     "@nekohack/profile-ui": "jiyuujin/profile-ui.git#92c8c720465ab35da150d065ff310b7fa1cd8254",
     "@vue/apollo-composable": "4.0.0-alpha.14",
     "@vueuse/core": "6.7.3",
-    "@vueuse/head": "0.9.0",
+    "@vueuse/head": "0.9.8",
     "apollo-cache-inmemory": "1.6.6",
     "apollo-client": "2.6.10",
     "apollo-link": "1.2.14",
