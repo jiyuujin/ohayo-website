@@ -38,7 +38,7 @@
     "remark-stringify": "10.0.3",
     "remark-toc": "8.0.1",
     "sass": "1.62.1",
-    "sharp": "0.31.3",
+    "sharp": "0.32.1",
     "to-vfile": "7.2.4",
     "ts-node": "10.9.1",
     "unified": "10.1.2"
