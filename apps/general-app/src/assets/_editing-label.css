@@ -1,0 +1,18 @@
+.editing_label {
+  display: inline-flex;
+  vertical-align: middle;
+  padding: 8px 16px;
+  color: #000000;
+  background: #fff;
+  border: 1px solid #5c93bb;
+  box-shadow: 0 2px 4px -2px #212538;
+  border-radius: 8px;
+}
+
+.editing_label:hover {
+  background: #f5fbff;
+}
+
+.editing_label span {
+  font-size: 12px;
+}
