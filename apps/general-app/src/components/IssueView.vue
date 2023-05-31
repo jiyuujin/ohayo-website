@@ -7,11 +7,12 @@
           <a
             :href="currentArticle?.url"
             :title="`${currentArticle?.url}を見る`"
+            class="editing_label"
             target="_blank"
             rel="noopener noreferrer"
           >
             <GithubSvg />
-            <span class="editing_label">Githubで編集を提案</span>
+            <span>GitHubで編集を提案</span>
           </a>
         </div>
       </div>
