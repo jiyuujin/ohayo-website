@@ -1,0 +1,39 @@
+/**
+ * normalize.css の minimum 版として作成
+ */
+
+.article {
+  color: #000;
+
+  p {
+    padding-right: 16px;
+    color: #35495e;
+  }
+
+  .post-detail {
+    h2 {
+      padding: 0.24em 0.48em;
+      margin: 8px 0;
+      color: #35495e;
+      border-left: solid 5px #42b883;
+    }
+
+    h3 {
+      padding: 0.24em 0.48em;
+      margin: 8px 0;
+      color: #35495e;
+      border-left: solid 5px #35495e;
+    }
+
+    h4 {
+      padding: 0.24em 0.48em;
+      margin: 8px 0;
+      color: #35495e;
+      border-left: solid 5px #ccc;
+    }
+
+    iframe {
+      width: 100%;
+    }
+  }
+}
