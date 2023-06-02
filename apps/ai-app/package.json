@@ -41,8 +41,6 @@
     "sharp": "0.32.1",
     "to-vfile": "7.2.4",
     "ts-node": "10.9.1",
-    "unified": "10.1.2",
-    "zenn-content-css": "0.1.143",
-    "zenn-markdown-html": "0.1.143"
+    "unified": "10.1.2"
   }
 }

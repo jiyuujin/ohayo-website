@@ -5,15 +5,11 @@ import { Image } from '@astrojs/image/components'
 import { Icon, Post } from '@ohayo/react-ui'
 import { GitHubRibbon } from '@ohayo/vue-ui'
 
-import lib from 'zenn-markdown-html'
-
 import BaseHead from '../../components/BaseHead.astro'
 import BlogHeader from '../../components/BlogHeader.astro'
 import BlogFooter from '../../components/BlogFooter.astro'
 
-import 'zenn-content-css'
-import '../../assets/_article-min.scss'
-// import '../../assets/lib/customize/_article.scss'
+import '../../assets/lib/customize/_article.scss'
 import '../../assets/lib/customize/_twitter.scss'
 import '../../assets/lib/_layout.scss'
 import '../../assets/player.scss'
@@ -44,15 +40,9 @@ export async function getStaticPaths() {
   }))
 }
 
-const markdownToHtml = lib.default ? lib.default : lib
-
 const { allPosts, post } = Astro.props
-const { slug, data: { title, explain, author, type } } = post
+const { slug, data: { title, explain, author } } = post
 const { Content, headings } = await post.render()
-
-const content = markdownToHtml(post.body, {
-  embedOrigin: 'https://embed.zenn.studio',
-})
 ---
 
 <!DOCTYPE html>
@@ -96,10 +86,10 @@ const content = markdownToHtml(post.body, {
                           </a>
                         </p>
                       ))}
-                  </details>
+                    </details>
+                  </div>
                 </div>
-              </div>
-              {type === 'zenn' ? <Fragment set:html={content} /> : <Content />}
+              <Content />
             </div>
           </div>
         </Post.Content>
