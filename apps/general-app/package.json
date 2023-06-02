@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:server": "yarn workspace @nekohack/ohayo-server build",
     "build:ssg": "vite-ssg build",
     "build:og-gen": "ts-node --project tsconfig.builder.json scripts/og-gen.ts",
+    "deploy:prebuild": "yarn workspace @nekohack/ohayo-server build",
     "deploy": "yarn workspace @nekohack/ohayo-server deploy",
     "lint": "npm run lint:server && npm run lint:front",
     "lint:server": "yarn workspace @nekohack/ohayo-server lint --fix",
