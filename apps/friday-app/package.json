@@ -22,7 +22,7 @@
     "vue": "3.2.47"
   },
   "devDependencies": {
-    "@astrojs/image": "0.16.9",
+    "@astrojs/image": "0.17.0",
     "@astrojs/react": "2.2.1",
     "@astrojs/svelte": "2.2.0",
     "@astrojs/vue": "2.2.1",
