@@ -34,14 +34,14 @@
     "markdown-it-link-attributes": "^3.0.0",
     "markdown-it-video": "^0.6.3",
     "ts-node": "^10.4.0",
-    "vue": "3.2.47",
+    "vue": "3.3.4",
     "vue-router": "4.2.2"
   },
   "devDependencies": {
     "@types/node": "^18.6.4",
     "@vitejs/plugin-vue": "^1.2.3",
-    "@vue/compiler-sfc": "3.2.47",
-    "@vue/server-renderer": "3.2.47",
+    "@vue/compiler-sfc": "3.3.4",
+    "@vue/server-renderer": "3.3.4",
     "autoprefixer": "^10.4.13",
     "isomorphic-unfetch": "^3.1.0",
     "puppeteer": "^10.4.0",
