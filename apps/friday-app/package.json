@@ -37,7 +37,7 @@
     "remark-parse": "10.0.2",
     "remark-stringify": "10.0.3",
     "remark-toc": "8.0.1",
-    "sass": "1.63.2",
+    "sass": "1.63.3",
     "sharp": "0.32.1",
     "to-vfile": "7.2.4",
     "ts-node": "10.9.1",
