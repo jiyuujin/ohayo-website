@@ -26,10 +26,6 @@ reaction: ⛰
 
 > CircleCI 公式から secret 一覧を取り出す CLI が提供されているので、こちらも是非。
 
-### OpenAI を使った簡単な Web アプリ
-
-https://kokeshi.vercel.app/
-
 ### GitHub 2022 年のトレンドまとめ
 
 [Open Source Highlights: Trends and Insights from GitHub 2022 | OSS Insight](https://ossinsight.io/2022/)
@@ -38,7 +34,7 @@ https://kokeshi.vercel.app/
 
 [Twemoji が 2023 年になると表示されなくなる問題に対処する](https://zenn.dev/yhatt/articles/60ce0c3ca79994)
 
-### エンジニア組織に発信の文化を
+### エンジニア組織に発信の文化
 
 [エンジニア組織に発信文化を浸透させるには｜ shu223 ｜ note](https://note.com/shu223/n/n138f13a64a72)
 
