@@ -18,16 +18,16 @@
     "textlint:fix": "textlint ./src/pages/posts/** --fix"
   },
   "dependencies": {
-    "svelte": "3.56.0",
+    "svelte": "4.0.0",
     "vue": "3.3.4"
   },
   "devDependencies": {
     "@astrojs/image": "0.17.1",
     "@astrojs/react": "2.2.1",
-    "@astrojs/svelte": "2.2.0",
+    "@astrojs/svelte": "3.0.0",
     "@astrojs/vue": "2.2.1",
     "astro-vanilla-extract": "2.2.0",
-    "astro": "2.6.6",
+    "astro": "2.7.0",
     "feed": "4.2.2",
     "front-matter": "4.0.2",
     "fs-extra": "11.1.1",
