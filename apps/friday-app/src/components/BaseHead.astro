@@ -1,4 +1,6 @@
 ---
+import { SEO } from 'astro-seo'
+
 export type Props = {
   title: string
   description: string
@@ -6,31 +8,47 @@ export type Props = {
   image?: string
 }
 
-const { title = '金曜日のエンジニアのつどい', description, permalink, image } = Astro.props;
+const {
+  title = '金曜日のエンジニアのつどい',
+  description,
+  permalink,
+  image = 'https://i.imgur.com/PHHQ4uM.jpg',
+} = Astro.props;
 ---
 
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nekohack/normalize.css/dist/index.css" />-->
 
 <title>{title}</title>
-<meta name="title" content={title}/>
-{description && <meta name="description" content={description}/>}
+
+<SEO
+  charset="UTF-8"
+  title={title}
+  description={description}
+  openGraph={{
+    basic: {
+      type: "A type.",
+      title: title,
+      url: permalink,
+      ...image && { image: image },
+    }
+  }}
+  twitter={{
+    creator: "@jiyuujin_dev"
+  }}
+  extend={{
+    link: [
+      { rel: "icon", href: "/favicon.ico" },
+      // {
+      //   rel: "stylesheet",
+      //   href: "https://cdn.jsdelivr.net/npm/@nekohack/normalize.css/dist/index.css",
+      // },
+    ],
+    meta: [
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: image },
+    ],
+  }}
+/>
 
 <script is:inline src="https://embed.zenn.studio/js/listen-embed-event.js"></script>
-
-<!-- Open Graph Tags (Facebook) -->
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content={title} />
-<meta property="og:title" content={title} />
-{permalink && <meta property="og:url" content={permalink} />}
-{description && <meta property="og:description" content={description} />}
-{image && <meta property="og:image" content={image} />}
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary" />
-<meta property="twitter:title" content={title} />
-{permalink && <meta property="twitter:url" content={permalink} />}
-{description && <meta property="twitter:description" content={description} />}
-{image && <meta property="twitter:image" content={image} />}
