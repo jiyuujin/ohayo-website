@@ -32,6 +32,14 @@
       border-left: solid 5px #ccc;
     }
 
+    img {
+      width: 60%;
+      margin: 0 10%;
+      @media (min-width: 768px) {
+        width: 80%;
+      }
+    }
+
     iframe {
       width: 100%;
     }
