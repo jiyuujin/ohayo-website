@@ -3,7 +3,7 @@ author: jiyuujin
 authorTwitter: jiyuujinlab
 category: article
 title: アーカイヴ - 2022/11/18 週
-explain: Nuxt v3 リリース、Designship 2022 速報、Notion AI ベータ版の申込開始
+explain: Nuxt v3 リリース、Designship 2022 速報、Notion AI β 版の申込開始
 slug: 2022-11-18-weekly-archived
 type: post
 date: 2022-11-18
@@ -18,7 +18,7 @@ reaction: 🦋
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">元アマゾン社員が「Amazonが新規事業開発で使っているアイデア出しフォーマット」を公開していました。<br><br>プレスリリース形式に情報をまとめるとのことです。<br><br>出典：forbes「アマゾンのすごい『逆算資料』。新サービス説明資料は『プレスリリース形式』で」 <a href="https://t.co/Or2IInQAVC">pic.twitter.com/Or2IInQAVC</a></p>&mdash; イナバ (@inaba_desu) <a href="https://twitter.com/inaba_desu/status/1592762416454328320?ref_src=twsrc%5Etfw">November 16, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-### Notion AI
+### Notion AI β 版
 
 [Introducing Notion AI](https://www.notion.so/product/ai)
 
