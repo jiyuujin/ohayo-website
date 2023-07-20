@@ -44,7 +44,7 @@
     "@vue/server-renderer": "3.3.4",
     "autoprefixer": "^10.4.13",
     "isomorphic-unfetch": "^3.1.0",
-    "puppeteer": "^10.4.0",
+    "puppeteer": "^20.0.0",
     "sass": "^1.57.1",
     "typescript": "^3.9.7",
     "unplugin-auto-import": "^0.16.0",
