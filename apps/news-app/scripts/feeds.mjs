@@ -12,7 +12,7 @@ import { promisify } from 'util'
 import fs from 'fs'
 import path from 'path'
 
-const currentDir = './src/pages/posts'
+const currentDir = './src/pages/ai/posts'
 
 let feed = new Feed({
   title: 'AIer.info',
