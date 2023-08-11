@@ -1,0 +1,110 @@
+---
+import { getCollection } from 'astro:content'
+
+import { Post } from '@ohayo/react-ui'
+import { GitHubRibbon } from '@ohayo/vue-ui'
+
+import BaseHead from '../components/BaseHead.astro'
+import BlogHeader from '../components/BlogHeader.astro'
+import BlogFooter from '../components/BlogFooter.astro'
+
+let title = 'AIer.info'
+let description = '週刊でAI界隈の最新情報を記録しています'
+let permalink = 'https://ohayo-ai.nekohack.me/'
+let author = 'jiyuujin'
+
+const allAi = await getCollection('aiposts')
+const allTech = await getCollection('techposts')
+const formattedAi = allAi
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
+  .reverse()
+  .slice(0, 5)
+const formattedTech = allTech
+  .sort((a, b) => a.data.date.getTime() - b.data.date.getTime())
+  .reverse()
+  .slice(0, 5)
+
+// const origin = new URL(Astro.request.url).origin
+const origin = 'https://ohayo-ai.nekohack.me'
+---
+
+<html lang="en">
+  <head>
+    <BaseHead {title} {description} {permalink} />
+    <style>
+      body {
+        background: rgba(167, 123, 243, 0.1);
+      }
+
+      .header {
+        z-index: 199;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        transition: 200ms;
+      }
+
+      .content {
+        display: flex;
+        gap: 20px;
+        padding: 16px 0;
+      }
+
+      .grid-item {
+        padding: 8px 16px;
+        background: #fff;
+        border: 1px solid #e6f6f5;
+        border-radius: 0 0 20px 0;
+      }
+
+      .grid-item:first-child() {
+        border-radius: 0 0 0 20px;
+      }
+
+      @media(max-width: 768px) {
+        .content {
+          flex-direction: column;
+        }
+
+        .grid-item {
+          border-radius: 0 0 20px 20px;
+        }
+
+        .grid-item:first-child() {
+          border-radius: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <GitHubRibbon />
+    <main>
+      <div class="header">
+        <BlogHeader description={description} />
+      </div>
+      <div class="content">
+        <div class="grid-item" aria-label="AI posts list">
+          {formattedAi.map((p) =>
+            <Post
+              url={`/ai/posts/${p.slug}`}
+              title={`${p.data.title}: ${p.data.explain}`}
+            />
+          )}
+        </div>
+        <div class="grid-item" aria-label="Tech posts list">
+          {formattedTech.map((p) =>
+            <Post
+              url={`/tech/posts/${p.slug}`}
+              title={`${p.data.title}: ${p.data.explain}`}
+            />
+          )}
+        </div>
+      </div>
+      <div class="footer">
+        <BlogFooter {author} />
+      </div>
+    </main>
+  </body>
+</html>
