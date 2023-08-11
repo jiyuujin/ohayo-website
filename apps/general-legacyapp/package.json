@@ -1,0 +1,61 @@
+{
+  "name": "@nekohack/general-legacyapp",
+  "description": "",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:ssg": "vite-ssg build",
+    "build:og-gen": "ts-node --project tsconfig.builder.json scripts/og-gen.ts",
+    "deploy:prebuild": "yarn workspace @nekohack/ohayo-server build",
+    "deploy": "yarn workspace @nekohack/ohayo-server deploy",
+    "lint": "npm run lint:server && npm run lint:front",
+    "lint:server": "yarn workspace @nekohack/ohayo-server lint --fix",
+    "lint:front": "eslint ./ --ext ts,vue --fix"
+  },
+  "dependencies": {
+    "@apollo/client": "3.7.17",
+    "@nekohack/normalize.css": "^2.7.0",
+    "@nekohack/profile-ui": "jiyuujin/profile-ui.git#92c8c720465ab35da150d065ff310b7fa1cd8254",
+    "@vue/apollo-composable": "4.0.0-alpha.14",
+    "@vueuse/core": "6.9.2",
+    "@vueuse/head": "0.5.1",
+    "apollo-cache-inmemory": "1.6.6",
+    "apollo-client": "2.6.10",
+    "apollo-link": "1.2.14",
+    "apollo-link-http": "1.5.17",
+    "dayjs": "^1.10.7",
+    "graphql": "^15.5.0",
+    "graphql-tag": "^2.11.0",
+    "markdown-it": "^12.2.0",
+    "markdown-it-attrs": "^4.1.0",
+    "markdown-it-container": "^3.0.0",
+    "markdown-it-link-attributes": "^3.0.0",
+    "markdown-it-video": "^0.6.3",
+    "ts-node": "^10.4.0",
+    "vue": "3.3.4",
+    "vue-router": "4.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.4",
+    "@vitejs/plugin-vue": "^1.2.3",
+    "@vue/compiler-sfc": "3.3.4",
+    "@vue/server-renderer": "3.3.4",
+    "autoprefixer": "^10.4.13",
+    "isomorphic-unfetch": "^3.1.0",
+    "puppeteer": "^10.4.0",
+    "sass": "^1.57.1",
+    "typescript": "^3.9.7",
+    "unplugin-auto-import": "^0.16.0",
+    "vite": "^2.3.7",
+    "vite-plugin-pages": "^0.31.0",
+    "vite-plugin-vue-layouts": "^0.8.0",
+    "vite-ssg": "^0.15.5",
+    "vite-svg-loader": "^2.2.0"
+  },
+  "workspaces": [
+    "*",
+    "server/*"
+  ]
+}

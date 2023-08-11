@@ -1,0 +1,113 @@
+---
+import { getCollection } from 'astro:content'
+
+import { Post } from '@ohayo/react-ui'
+import { GitHubRibbon } from '@ohayo/vue-ui'
+
+import BaseHead from '../../components/BaseHead.astro'
+import BlogHeader from '../../components/BlogHeader.astro'
+import BlogFooter from '../../components/BlogFooter.astro'
+import PaginationBase from '../../components/PaginationBase.astro'
+
+let title = 'おはようエンジニアのつどい'
+let description = '週刊で技術界隈の最新情報について語らいます'
+let permalink = 'https://ohayo.nekohack.me/'
+let author = 'jiyuujin'
+
+const allPosts = await getCollection('techposts')
+const allPostsSize = allPosts.length
+
+const PAGENATE = 5
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection('techposts')
+  const formattedPosts = allPosts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime()).reverse()
+  const PAGENATE = 5
+
+  return paginate(formattedPosts, {
+    pageSize: PAGENATE,
+  })
+}
+
+const { page } = Astro.props
+
+// const origin = new URL(Astro.request.url).origin
+const origin = 'https://ohayo.nekohack.me/tech'
+---
+
+<html lang="en">
+  <head>
+    <BaseHead {title} {description} {permalink} />
+    <style>
+      body {
+        background: rgba(167, 123, 243, 0.1);
+      }
+
+      .header {
+        z-index: 199;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        transition: 200ms;
+      }
+
+      .content {
+        padding: 8px 16px;
+        max-width: 1246px;
+        margin: 0 auto;
+      }
+
+      .grid {
+        /*display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto, 1fr, auto);*/
+        padding: 8px 16px;
+      }
+
+      .grid {
+        border-bottom: 1px solid #e6f6f5;
+      }
+
+      .pagination-wrapper {
+        padding: 8px 0;
+      }
+
+      @media(min-width: 768px) {
+        .grid {
+          padding: 8px 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <GitHubRibbon />
+    <main>
+      <div class="header">
+        <BlogHeader description={description} />
+      </div>
+      <div class="content">
+        <div class="grid" aria-label="Blog post list">
+          {page.data.map((p) =>
+            <Post
+              url={`/posts/${p.slug}`}
+              title={`${p.data.title}: ${p.data.explain}`}
+            />
+          )}
+        </div>
+        <div class="pagination-wrapper">
+          <PaginationBase
+            currentPage={page.currentPage}
+            totalPage={Math.ceil(allPostsSize / PAGENATE)}
+            perPage={PAGENATE}
+            firstUrl={origin}
+            />
+        </div>
+      </div>
+      <div class="footer">
+        <BlogFooter {author} />
+      </div>
+    </main>
+  </body>
+</html>
