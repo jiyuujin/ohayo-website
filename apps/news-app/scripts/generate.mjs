@@ -3,23 +3,26 @@ import fs from 'fs'
 import puppeteer from 'puppeteer'
 import frontMatter from 'front-matter'
 
-const postsDirectory = path.join(process.cwd(), 'src/content/posts')
+const aiPostsDirectory = path.join(process.cwd(), 'src/content/aiposts')
+const techPostsDirectory = path.join(process.cwd(), 'src/content/techposts')
 
-async function getPostReaction(filename) {
-  let result = ''
-
+async function loadPost(postsDirectory, filename) {
   const res = await fs.readFileSync(path.join(postsDirectory, `${filename}`), 'utf8')
   const _data = frontMatter(res)
   const data = _data.attributes
-  result = data.reaction
+  return data.reaction
+}
+
+async function getPostReaction(postsDirectory, filename) {
+  const result = loadPost(postsDirectory, filename)
   return result
 }
 
-async function main() {
+async function main(category, postsDirectory) {
   const postFiles = fs.readdirSync(postsDirectory)
 
   for (const mdFilename of postFiles) {
-    const title = await getPostReaction(mdFilename)
+    const title = await getPostReaction(postsDirectory, mdFilename)
     const browser = await puppeteer.launch({
       headless: true,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
@@ -52,7 +55,7 @@ async function main() {
       )
 
       await page.screenshot({
-        path: `public/og/${mdFilename.replace('.md', '')}.png`,
+        path: `public/og/${category}_${mdFilename.replace('.md', '')}.png`,
         clip: { x: 0, y: 0, width: 840, height: 840 },
       })
     } catch (e) {
@@ -63,4 +66,5 @@ async function main() {
   }
 }
 
-main()
+main('ai', aiPostsDirectory)
+main('tech', techPostsDirectory)

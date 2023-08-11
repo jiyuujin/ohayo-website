@@ -22,7 +22,7 @@ import '../../../assets/section.scss'
 import '../../../assets/summary.scss'
 
 interface Props {
-  post: CollectionEntry<"posts">
+  post: CollectionEntry<"techposts">
 }
 
 let allIcons = [
@@ -61,8 +61,8 @@ const content = markdownToHtml(post.body, {
     <BaseHead
       {title}
       description={explain}
-      permalink={`https://ohayo-ai.nekohack.me/posts/${slug}`}
-      image={`https://ohayo-ai.nekohack.me/og/${slug}.png`}
+      permalink={`https://ohayo.nekohack.me/posts/${slug}`}
+      image={`https://ohayo.nekohack.me/og/tech_${slug}.png`}
     />
     <style>
       body {

@@ -17,8 +17,8 @@ const currentDir = './src/pages/posts'
 let feed = new Feed({
   title: 'AIer.info',
   description: '週刊でAI界隈の最新情報を記録しています',
-  feed_url: 'https://ohayo-ai.nekohack.me/feeds.xml',
-  site_url: 'https://ohayo-ai.nekohack.me/',
+  feed_url: 'https://ohayo.nekohack.me/feeds.xml',
+  site_url: 'https://ohayo.nekohack.me/',
   copyright: 'nekohack',
   language: 'ja',
 })
@@ -40,8 +40,8 @@ fs.readdir(currentDir, function (err, files) {
                 .replace('\n', '')
               feed.items.push({
                 title: title,
-                id: `https://ohayo-ai.nekohack.me/posts/${file.replace('.md', '')}`,
-                link: `https://ohayo-ai.nekohack.me/posts/${file.replace('.md', '')}`,
+                id: `https://ohayo.nekohack.me/posts/${file.replace('.md', '')}`,
+                link: `https://ohayo.nekohack.me/posts/${file.replace('.md', '')}`,
                 author: [
                   {
                     name: 'jiyuujin',

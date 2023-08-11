@@ -9,9 +9,9 @@ import BlogHeader from '../../components/BlogHeader.astro'
 import BlogFooter from '../../components/BlogFooter.astro'
 import PaginationBase from '../../components/PaginationBase.astro'
 
-let title = 'AIer.info'
-let description = '週刊でAI界隈の最新情報を記録しています'
-let permalink = 'https://ohayo-ai.nekohack.me/'
+let title = 'おはようエンジニアのつどい'
+let description = '週刊で技術界隈の最新情報について語らいます'
+let permalink = 'https://ohayo.nekohack.me/'
 let author = 'jiyuujin'
 
 const allPosts = await getCollection('aiposts')
@@ -32,7 +32,7 @@ export async function getStaticPaths({ paginate }) {
 const { page } = Astro.props
 
 // const origin = new URL(Astro.request.url).origin
-const origin = 'https://ohayo-ai.nekohack.me'
+const origin = 'https://ohayo.nekohack.me/ai'
 ---
 
 <html lang="en">

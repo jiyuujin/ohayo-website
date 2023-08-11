@@ -8,9 +8,9 @@ import BaseHead from '../components/BaseHead.astro'
 import BlogHeader from '../components/BlogHeader.astro'
 import BlogFooter from '../components/BlogFooter.astro'
 
-let title = 'AIer.info'
-let description = '週刊でAI界隈の最新情報を記録しています'
-let permalink = 'https://ohayo-ai.nekohack.me/'
+let title = 'おはようエンジニアのつどい'
+let description = '週刊で技術界隈の最新情報について語らいます'
+let permalink = 'https://ohayo.nekohack.me/'
 let author = 'jiyuujin'
 
 const allAi = await getCollection('aiposts')
@@ -25,7 +25,7 @@ const formattedTech = allTech
   .slice(0, 5)
 
 // const origin = new URL(Astro.request.url).origin
-const origin = 'https://ohayo-ai.nekohack.me'
+const origin = 'https://ohayo.nekohack.me'
 ---
 
 <html lang="en">
