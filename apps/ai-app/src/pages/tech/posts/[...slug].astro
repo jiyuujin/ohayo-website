@@ -12,14 +12,14 @@ import BlogHeader from '../../components/BlogHeader.astro'
 import BlogFooter from '../../components/BlogFooter.astro'
 
 import 'zenn-content-css'
-import '../../assets/_article-min.scss'
-// import '../../assets/lib/customize/_article.scss'
-import '../../assets/lib/customize/_twitter.scss'
-import '../../assets/lib/_layout.scss'
-import '../../assets/player.scss'
-import '../../assets/reset.scss'
-import '../../assets/section.scss'
-import '../../assets/summary.scss'
+import '../../../assets/_article-min.scss'
+// import '../../../assets/lib/customize/_article.scss'
+import '../../../assets/lib/customize/_twitter.scss'
+import '../../../assets/lib/_layout.scss'
+import '../../../assets/player.scss'
+import '../../../assets/reset.scss'
+import '../../../assets/section.scss'
+import '../../../assets/summary.scss'
 
 interface Props {
   post: CollectionEntry<"posts">
@@ -33,7 +33,7 @@ let allIcons = [
 ]
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts')
+  const posts = await getCollection('techposts')
 
   return posts.map((post) => ({
     params: { slug: post.slug },
