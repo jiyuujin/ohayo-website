@@ -20,10 +20,10 @@ coverage
 .idea
 
 apps/ai-app/public/feeds.xml
-apps/general-app/public/feeds.xml
+apps/general-legacyapp/public/feeds.xml
 
 #apps/ai-app/public/og/*.png
-#apps/general-app/public/og/*.png
+#apps/general-legacyapp/public/og/*.png
 
 #!apps/ai-app/public/og/top.png
-#!apps/general-app/public/og/top.png
+#!apps/general-legacyapp/public/og/top.png
