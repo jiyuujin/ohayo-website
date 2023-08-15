@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@astrojs/image": "0.17.3",
-    "@astrojs/react": "2.2.1",
+    "@astrojs/react": "2.2.2",
     "@astrojs/svelte": "3.1.0",
     "@astrojs/vue": "2.2.1",
     "astro": "2.10.7",
