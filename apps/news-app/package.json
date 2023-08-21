@@ -28,7 +28,7 @@
     "@astrojs/vue": "2.2.1",
     "astro-vanilla-extract": "2.2.0",
     "astro": "2.10.12",
-    "astro-seo": "0.7.5",
+    "astro-seo": "0.7.6",
     "feed": "4.2.2",
     "front-matter": "4.0.2",
     "fs-extra": "11.1.1",
