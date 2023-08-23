@@ -27,7 +27,7 @@
     "@astrojs/svelte": "3.1.1",
     "@astrojs/vue": "2.2.1",
     "astro-vanilla-extract": "2.2.0",
-    "astro": "2.10.12",
+    "astro": "2.10.13",
     "astro-seo": "0.7.6",
     "feed": "4.2.2",
     "front-matter": "4.0.2",
