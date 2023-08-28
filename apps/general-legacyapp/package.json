@@ -15,7 +15,7 @@
     "lint:front": "eslint ./ --ext ts,vue --fix"
   },
   "dependencies": {
-    "@apollo/client": "3.7.17",
+    "@apollo/client": "3.8.1",
     "@nekohack/normalize.css": "^2.7.0",
     "@nekohack/profile-ui": "jiyuujin/profile-ui.git#92c8c720465ab35da150d065ff310b7fa1cd8254",
     "@vue/apollo-composable": "4.0.0-alpha.14",
