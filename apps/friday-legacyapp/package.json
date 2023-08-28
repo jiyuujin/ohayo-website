@@ -18,7 +18,7 @@
     "textlint:fix": "textlint ./src/pages/posts/** --fix"
   },
   "dependencies": {
-    "svelte": "4.1.2",
+    "svelte": "4.2.0",
     "vue": "3.3.4"
   },
   "devDependencies": {
