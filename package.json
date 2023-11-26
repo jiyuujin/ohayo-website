@@ -26,7 +26,7 @@
     "eslint-plugin-vuejs-accessibility": "2.2.0",
     "prettier": "3.0.3",
     "prettier-plugin-astro": "0.12.0",
-    "textlint": "12.6.1",
+    "textlint": "13.4.1",
     "textlint-rule-preset-ja-technical-writing": "^7.0.0",
     "textlint-rule-preset-nekohack-inc": "git+https://github.com/nekohack/textlint-rule-preset-nekohack-inc.git",
     "textlint-rule-spellcheck-tech-word": "^5.0.0",
