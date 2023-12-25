@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "11.11.0",
-    "@emotion/react": "11.11.1",
+    "@emotion/react": "11.11.3",
     "@storybook/addon-a11y": "7.4.0",
     "@storybook/addon-essentials": "7.4.0",
     "@storybook/addon-links": "7.4.0",
