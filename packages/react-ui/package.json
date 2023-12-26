@@ -27,7 +27,7 @@
     "@types/react-dom": "18.2.7",
     "@vanilla-extract/css": "1.13.0",
     "@vanilla-extract/vite-plugin": "3.9.3",
-    "@vitejs/plugin-react": "3.1.0",
+    "@vitejs/plugin-react": "4.2.1",
     "storybook": "7.4.0",
     "ts-pattern": "4.3.0",
     "typescript": "5.0.4",
