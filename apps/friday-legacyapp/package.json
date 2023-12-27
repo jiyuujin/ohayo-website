@@ -44,6 +44,6 @@
     "ts-node": "10.9.2",
     "unified": "10.1.2",
     "zenn-content-css": "0.1.150",
-    "zenn-markdown-html": "0.1.144"
+    "zenn-markdown-html": "0.1.150"
   }
 }
