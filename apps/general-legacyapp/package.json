@@ -17,7 +17,7 @@
   "dependencies": {
     "@apollo/client": "3.8.1",
     "@nekohack/normalize.css": "^2.7.0",
-    "@nekohack/profile-ui": "jiyuujin/profile-ui.git#92c8c720465ab35da150d065ff310b7fa1cd8254",
+    "@nekohack/profile-ui": "jiyuujin/profile-ui.git#cc87f9a2d38a971996f6d6e71d57409f6c08273b",
     "@vue/apollo-composable": "4.0.0-alpha.14",
     "@vueuse/core": "6.9.2",
     "@vueuse/head": "0.5.1",
