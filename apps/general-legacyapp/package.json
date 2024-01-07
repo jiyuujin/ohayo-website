@@ -51,7 +51,7 @@
     "vite": "^2.3.7",
     "vite-plugin-pages": "^0.31.0",
     "vite-plugin-vue-layouts": "^0.8.0",
-    "vite-ssg": "^0.15.5",
+    "vite-ssg": "^0.23.0",
     "vite-svg-loader": "^2.2.0"
   },
   "workspaces": [
